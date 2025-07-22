@@ -9,6 +9,7 @@
 
     <!-- Optional: Your custom CSS -->
     <link rel="stylesheet" href="<?= base_url('css/custom.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/adminlte.css') ?>">
 </head>
 <body>
 <header class="bg-dark text-white p-3">
