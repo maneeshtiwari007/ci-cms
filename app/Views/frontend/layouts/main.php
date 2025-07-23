@@ -1,3 +1,5 @@
 <?= $this->include('frontend/layouts/header') ?>
-<?= $this->renderSection('content') ?>
+<!-- <main style="padding: 20px;"></main> -->
+    <?= $this->renderSection('content') ?>
+
 <?= $this->include('frontend/layouts/footer') ?>

@@ -1,3 +1,7 @@
 <?= $this->include('admin/layouts/header') ?>
-<?= $this->renderSection('content') ?>
+<!--begin::App Main-->
+<main class="app-main">
+    <?= $this->renderSection('content') ?>
+</main>
+<!--end::App Main-->
 <?= $this->include('admin/layouts/footer') ?>

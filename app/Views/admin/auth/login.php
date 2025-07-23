@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Login Page v2</title>
+    <title>CI-CMS | Login Page</title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -26,6 +26,7 @@
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
     <link rel="preload" href="../css/adminlte.css" as="style" />
+
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
@@ -45,7 +46,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../css/adminlte.css" />
+    <link rel="stylesheet" href="../backend/css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
 </head>
 <!--end::Head-->
@@ -55,8 +56,7 @@
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header">
-                <a href="../index2.html"
-                    class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover">
+                <a href="#" class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover">
                     <h1 class="mb-0"><b>CI-</b>CMS</h1>
                 </a>
             </div>
@@ -131,7 +131,7 @@
     </script>
     <!--end::Required Plugin(Bootstrap 5)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <script src="../js/adminlte.js"></script>
+    <script src="../backend/js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)-->
     <!--begin::OverlayScrollbars Configure-->
     <script>
