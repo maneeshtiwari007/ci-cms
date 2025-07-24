@@ -9,6 +9,9 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         return view('admin/dashboard');
     }
 }
