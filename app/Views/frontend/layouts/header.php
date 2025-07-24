@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap" rel="stylesheet">
     <!-- ✅ Bootstrap 5.3 CSS -->
     <link href="<?= base_url('backend/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    <link rel="stylesheet" href="<?= base_url('assets/stylesheets/style.css') ?>">
 
 </head>
 
