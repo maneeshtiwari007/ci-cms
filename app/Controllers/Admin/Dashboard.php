@@ -14,4 +14,18 @@ class Dashboard extends BaseController
         }
         return view('admin/dashboard');
     }
+
+      public function content()
+    {  
+        return view('admin/content_form');
+    }
+
+    public function saveContent()
+    {
+        $title = $this->request->getPost('title');
+        $content = $this->request->getPost('content');
+
+        // Yahan DB me insert/update ka logic aayega (abhi sirf test ke liye)
+        return redirect()->to('/admin/content')->with('success', 'Content saved successfully!');
+    }
 }
