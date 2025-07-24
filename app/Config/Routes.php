@@ -7,8 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 
-$routes->get('/', 'Frontend::index'); // Frontend Home Page
-$routes->match(['get', 'post'], 'admin/login', 'Admin\Auth::login'); // Admin Login
-$routes->get('admin/logout', 'Admin\Auth::logout'); // Admin Logout
-$routes->get('admin/dashboard', 'Admin\Dashboard::index'); // Admin Dashboard (protected)
+$routes->get('/', 'Frontend::index'); 
+$routes->get('admin/login', 'Admin\Auth::login');        // Show login form
+$routes->post('admin/login', 'Admin\Auth::login');   
+$routes->get('admin/logout', 'Admin\Auth::logout'); 
+$routes->get('admin/dashboard', 'Admin\Dashboard::index'); 
 
