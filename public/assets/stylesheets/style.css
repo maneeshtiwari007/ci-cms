@@ -76,7 +76,7 @@ body {
 
 #clockdiv {
 	font-family: sans-serif;
-	color: #fff;
+	color: #000;
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
@@ -86,14 +86,14 @@ body {
 #clockdiv > div {
 	padding: 10px;
 	border-radius: 3px;
-	background: #619ef7;
+	background: #e6eef9;
 	display: inline-block;
 }
 
 #clockdiv div > span {
 	padding: 15px;
 	border-radius: 3px;
-	background: #0a56c4;
+	background: #fff;
 	display: inline-block;
 }
 

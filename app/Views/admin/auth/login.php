@@ -11,10 +11,11 @@
     <meta name="color-scheme" content="light dark" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="<?= base_url('../backend/css/adminlte.css') ?>" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="<?= base_url('backend/css/adminlte.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('backend/css/bootstrap-icons.min.css') ?>" />
+
+    <link rel="stylesheet" href="<?= base_url('backend/css/overlayscrollbars.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('backend/css/index.css') ?>" media="print" onload="this.media='all'" />
 </head>
 
 <body class="login-page bg-body-secondary">
@@ -27,19 +28,19 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-               <!-- Flash Success Message -->
-        <?php if (session()->getFlashdata('message')): ?>
-            <div class="alert alert-success">
-                <?= session()->getFlashdata('message') ?>
-            </div>
-        <?php endif; ?>
+                <!-- Flash Success Message -->
+                <?php if (session()->getFlashdata('message')): ?>
+                <div class="alert alert-success">
+                    <?= session()->getFlashdata('message') ?>
+                </div>
+                <?php endif; ?>
 
-        <!-- Error Message -->
-        <?php if (isset($error)): ?>
-            <div class="alert alert-danger">
-                <?= $error ?>
-            </div>
-        <?php endif; ?>
+                <!-- Error Message -->
+                <?php if (isset($error)): ?>
+                <div class="alert alert-danger">
+                    <?= $error ?>
+                </div>
+                <?php endif; ?>
 
                 <form action="<?= base_url('admin/login') ?>" method="post">
                     <?= csrf_field() ?>
@@ -87,10 +88,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
-    <script src="<?= base_url('../backend/js/adminlte.js') ?>"></script>
+    <script src="<?= base_url('backend/js/overlayscrollbars.browser.es6.min.js') ?>">
+    </script>
+    <script src="<?= base_url('backend/js/popper.min.js') ?>"></script>
+    <script src="<?= base_url('backend/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?= base_url('backend/js/adminlte.js') ?>"></script>
 
 </body>
 
