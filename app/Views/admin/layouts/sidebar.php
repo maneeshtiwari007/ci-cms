@@ -26,7 +26,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-ui-checks-grid"></i>
                         <p>
@@ -52,22 +52,22 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-browser-edge"></i>
-                        <p>Browser Support</p>
+                        <p>Page Content</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
                         <p>Contact Us</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-question-circle-fill"></i>
                         <p>FAQ</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-patch-check-fill"></i>
                         <p>License</p>
