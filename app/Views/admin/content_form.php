@@ -36,7 +36,7 @@
 
                             <div class="mb-3">
                                 <label for="description" class="form-label">Content</label>
-                                <textarea name="description" id="editor" class="form-control" rows="8" required></textarea>
+                                <textarea name="description" id="div_editor1" class="form-control" rows="8" required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -49,18 +49,21 @@
     </div>
 </div>
 
-<!-- ✅ Syncfusion RichTextEditor CSS -->
-<link href="https://cdn.syncfusion.com/ej2/25.1.35/material.css" rel="stylesheet" />
-
-<!-- ✅ Syncfusion RichTextEditor JS (All-in-one package) -->
-<script src="https://cdn.syncfusion.com/ej2/25.1.35/dist/ej2.min.js"></script>
+<link href="<?= base_url('assets/richtexteditor/rte_theme_default.css') ?>" rel="stylesheet" />
+<!-- ✅ Local RichTextEditor JS -->
+<script src="<?= base_url('assets/richtexteditor/rte.js') ?>"></script>
+<script src="<?= base_url('assets/richtexteditor/plugins/all_plugins.js"') ?>"></script>
 
 <!-- ✅ Init Script -->
 <script>
+    var editor1;
     document.addEventListener("DOMContentLoaded", function () {
-        var editor = new ej.richtexteditor.RichTextEditor({});
-        editor.appendTo('#editor');
+        editor1 = new RichTextEditor("#div_editor1");
     });
+
+    function updateTextarea() {
+        document.getElementById("description").value = editor1.getHTMLCode();
+    }
 </script>
 
 <?= $this->endSection() ?>

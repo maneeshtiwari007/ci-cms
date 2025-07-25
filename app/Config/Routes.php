@@ -13,8 +13,15 @@ $routes->post('admin/login', 'Admin\Auth::login');
 $routes->get('admin/logout', 'Admin\Auth::logout'); 
 $routes->get('admin/dashboard', 'Admin\Dashboard::index');
 
-$routes->get('admin/content', 'Admin\Dashboard::content');
-$routes->post('admin/content', 'Admin\Dashboard::saveContent');
+$routes->get('admin/content/add', 'Admin\Dashboard::content');
+$routes->post('admin/content/store', 'Admin\Dashboard::store');
+$routes->get('admin/content/list', 'Admin\Dashboard::list');
+
+$routes->get('admin/content/edit/(:num)', 'Admin\Dashboard::edit/$1');
+$routes->post('admin/content/update/(:num)', 'Admin\Dashboard::update/$1');
+$routes->get('admin/content/delete/(:num)', 'Admin\Dashboard::delete/$1');
+
+
 
 
 

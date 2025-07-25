@@ -59,6 +59,8 @@
     <!-- jsvectormap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
         integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
+        
+        
 </head>
 
 <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
@@ -95,16 +97,16 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img src="<?= base_url('backend/img/user2-160x160.jpg') ?>"
                                 class="user-image rounded-circle shadow" alt="User Image" />
-                            <span class="d-none d-md-inline">Alexander Pierce</span>
+                            <span class="d-none d-md-inline"><?= session('admin_name') ?? 'Admin' ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-person fs-5 me-2"></i>My Profile</a>
+                            <!-- <li><a class="dropdown-item" href="#"><i class="bi bi-person fs-5 me-2"></i>My Profile</a>
                             </li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="dropdown-item text-danger pb-2" href="<?= base_url('admin/logout') ?>"><i
                                         class="bi bi-power me-2"></i>Log
