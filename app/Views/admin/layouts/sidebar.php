@@ -51,7 +51,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/content') ?>" class="nav-link">
+                    <a href="<?= base_url('admin/content/list') ?>" class="nav-link">
                         <i class="nav-icon bi bi-browser-edge"></i>
                         <p>Page Content</p>
                     </a>
