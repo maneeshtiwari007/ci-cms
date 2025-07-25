@@ -67,7 +67,7 @@
                         <p>FAQ</p>
                     </a>
                 </li>
-                <li class="nav-item d-none">
+                <li class="nav-item d-none"> 
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-patch-check-fill"></i>
                         <p>License</p>
