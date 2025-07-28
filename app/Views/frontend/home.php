@@ -36,7 +36,7 @@
   <div class="container">
     <h2>Want to know your investment?</h2>
     <p>Use our calculator to estimate your monthly cost based on your business needs.</p>
-    <a href="calculate-price.html" class="btn cta-gradient mt-3">
+    <a href="<?=  base_url('/calculate-price') ?>" class="btn cta-gradient mt-3">
       Click to <strong>Calculate Your Monthly Cost</strong>
     </a>
   </div>
