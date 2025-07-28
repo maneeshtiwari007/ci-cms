@@ -1,5 +1,5 @@
 <?= $this->extend('frontend/layouts/main') ?>
-
+<?= $this->section('pageTitle') ?>Calculate Price<?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
 <header class="bg-dark text-white  py-5 pt-5 position-relative" style="background-image: url('assets/images/inner-banner.jpg'); background-size: cover; background-position: center;">

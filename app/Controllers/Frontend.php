@@ -6,10 +6,12 @@ class Frontend extends BaseController
 {
     public function index()
     {
-        return view('frontend/home');
+        $data['pageTitle'] = 'Dashboard';
+        return view('frontend/home', $data);
     }
 
     public function calculatePrice(){
-        return view('frontend/calculate_price');
+        $data['pageTitle'] = 'Calculate Price';
+        return view('frontend/calculate_price', $data);
     }
 }
