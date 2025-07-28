@@ -1,4 +1,5 @@
 <?= $this->extend('frontend/layouts/main') ?>
+<?= $this->section('pageTitle') ?>Home Page<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 
