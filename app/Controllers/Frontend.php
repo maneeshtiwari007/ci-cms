@@ -8,4 +8,8 @@ class Frontend extends BaseController
     {
         return view('frontend/home');
     }
+
+    public function calculatePrice(){
+        return view('frontend/calculate_price');
+    }
 }
