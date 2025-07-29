@@ -8,10 +8,16 @@ use CodeIgniter\Router\RouteCollection;
 //$routes->get('/', 'Home::index');
 
 $routes->get('/', 'Frontend::index');
-$routes->get('/calculate-price', 'Frontend::calculatePrice'); 
+$routes->get('/calculate-price', 'Frontend::calculatePrice');
+$routes->get('/why-choose-us', 'Frontend::whyChooseUs');
+$routes->get('/careers', 'Frontend::careers');  
+$routes->get('/web-development', 'Frontend::webDevelopment'); 
+$routes->get('/calculate/price', 'Frontend::calculatePrice'); 
+$routes->get('/complete-business', 'Frontend::completeBusiness'); 
 
-
-$routes->get('admin/login', 'Admin\Auth::login');        // Show login form
+$routes->get('admin', 'Admin\Auth::login'); 
+$routes->get('admin/login', 'Admin\Auth::login'); 
+       // Show login form
 $routes->post('admin/login', 'Admin\Auth::login');   
 $routes->get('admin/logout', 'Admin\Auth::logout'); 
 $routes->get('admin/add', 'Admin\Auth::addAdmin');

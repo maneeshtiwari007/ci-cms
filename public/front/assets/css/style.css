@@ -11,6 +11,10 @@ body{
     padding: 10px 25px;
     position: relative;
 }
+.nav-item.dropdown:hover .dropdown-menu{
+  display: block;
+  margin-top: 0; /* Remove gap */
+}
 .navbar-nav .nav-item .nav-link:hover, 
 .dropdown-item:hover {
     background-color: #f8f9fa;
@@ -76,7 +80,7 @@ h2{
         position: relative;
         padding-top: 70px;
     }
-    .ready-to-talk, input[type="submit"], .our-services .btn {
+    .ready-to-talk, input[type="submit"], .our-services .btn, form button {
         background: linear-gradient(135deg, #007bff, #00d4ff);
         color: white;
         padding: 10px 20px;
@@ -84,8 +88,9 @@ h2{
         border-radius: 30px;
         border: 0px;
     }
-    .ready-to-talk:hover, input[type="submit"]:hover, .our-services .btn:hover {
+    .ready-to-talk:hover, input[type="submit"]:hover, .our-services .btn:hover, form button:hover {
         background: linear-gradient(135deg, #0056b3, #00aaff);
+        border: 0px;
         transform: scale(1.05);
         transition: all 0.3s ease;
     }
@@ -163,6 +168,16 @@ h2{
         background-attachment: fixed;
         background-size: cover;
       }
+      .trust-banner{
+        background-image: url("../images/trust-banner.jpg");
+        background-size: cover;
+        padding-bottom: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
 
       .our-services .card img{
         max-width: 100px;
@@ -183,15 +198,18 @@ h2{
     }
     .breadcrumb-container{
         padding: 10px 0;
-        background-color: #9e9e9e;
+        background-color: #444;
     }
     .breadcrumb-container ol{
         margin: 0px;
     }
     .breadcrumb-container ol li a{
         padding: 10px 0;
-        color: #444 !important;
+        color: #FFF !important;
         text-decoration: none;
+    }
+    .breadcrumb-item.active, .breadcrumb-item+.breadcrumb-item::before{
+      color: #FFF !important;
     }
     .breadcrumb-container ol li a:hover{
         text-decoration: underline;

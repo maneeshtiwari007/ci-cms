@@ -52,7 +52,7 @@
 <link href="<?= base_url('assets/richtexteditor/rte_theme_default.css') ?>" rel="stylesheet" />
 <!-- ✅ Local RichTextEditor JS -->
 <script src="<?= base_url('assets/richtexteditor/rte.js') ?>"></script>
-<script src="<?= base_url('assets/richtexteditor/plugins/all_plugins.js"') ?>"></script>
+<script src="<?= base_url('assets/richtexteditor/plugins/all_plugins.js') ?>"></script>
 
 <!-- ✅ Init Script -->
 <script>
@@ -61,9 +61,7 @@
         editor1 = new RichTextEditor("#div_editor1");
     });
 
-    function updateTextarea() {
-        document.getElementById("description").value = editor1.getHTMLCode();
-    }
+    
 </script>
 
 <?= $this->endSection() ?>
