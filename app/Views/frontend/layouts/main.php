@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?= $this->include('frontend/layouts/header') ?>
-<!-- <main style="padding: 20px;"></main> -->
-    <?= $this->renderSection('content') ?>
+
+<body>
+<?= $this->include('frontend/layouts/navbar') ?>
+
+<?= $this->renderSection('content') ?>
 
 <?= $this->include('frontend/layouts/footer') ?>
+
+</body>
+</html>

@@ -1,9 +1,7 @@
 <?= $this->extend('frontend/layouts/main') ?>
-<?= $this->section('pageTitle') ?>Home Page<?= $this->endSection() ?>
+<?= $this->section('title') ?>Home Page<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-
-
 
 <section>
   <!-- Full Width Carousel Slider -->

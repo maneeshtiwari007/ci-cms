@@ -2,7 +2,7 @@
 <?= $this->section('pageTitle') ?>Calculate Price<?= $this->endSection() ?>
 <?= $this->section('content') ?>
 
-<header class="bg-dark text-white  py-5 pt-5 position-relative" style="background-image: url('assets/images/inner-banner.jpg'); background-size: cover; background-position: center;">
+<header class="bg-dark text-white py-5 pt-5 position-relative" style="background-image: url('<?= base_url('front/assets/images/inner-banner.jpg'); ?>'); background-size: cover; background-position: center;">
   <div class="container">
     <h1 class="display-6 text-white fw-bold">Calculate Your Monthly IT Cost</h1>
     <p class="lead  text-white">Estimate your monthly expenses based on your business needs.</p>
