@@ -52,13 +52,7 @@
     <!-- Optional: Your custom CSS -->
     <link rel="stylesheet" href="<?= base_url('backend/css/custom.css') ?>">
 
-    <!-- apexcharts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
-        integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous" />
-
-    <!-- jsvectormap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
-        integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous" />
+    
         
         
 </head>
@@ -97,7 +91,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img src="<?= base_url('backend/img/user2-160x160.jpg') ?>"
                                 class="user-image rounded-circle shadow" alt="User Image" />
-                            <span class="d-none d-md-inline"><?= session('admin_name') ?? 'Admin' ?></span>
+                            <span class="d-none d-md-inline"><?= session('role') ?? 'Admin' ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <!-- <li><a class="dropdown-item" href="#"><i class="bi bi-person fs-5 me-2"></i>My Profile</a>

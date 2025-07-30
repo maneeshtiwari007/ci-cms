@@ -14,6 +14,7 @@ $routes->get('/careers', 'Frontend::careers');
 $routes->get('/web-development', 'Frontend::webDevelopment'); 
 $routes->get('/calculate/price', 'Frontend::calculatePrice'); 
 $routes->get('/complete-business', 'Frontend::completeBusiness'); 
+$routes->post('/save-inquiry', 'Frontend::saveInquiry');
 
 $routes->get('admin', 'Admin\Auth::login'); 
 $routes->get('admin/login', 'Admin\Auth::login'); 
@@ -32,6 +33,14 @@ $routes->get('admin/content/list', 'Admin\Dashboard::list');
 $routes->get('admin/content/edit/(:num)', 'Admin\Dashboard::edit/$1');
 $routes->post('admin/content/update/(:num)', 'Admin\Dashboard::update/$1');
 $routes->get('admin/content/delete/(:num)', 'Admin\Dashboard::delete/$1');
+
+//slider route start
+$routes->get('admin/slider', 'Admin\Dashboard::sliderIndex');
+$routes->get('admin/add-slider', 'Admin\Dashboard::addSlider');
+$routes->post('admin/store-slider', 'Admin\Dashboard::storeSlider');
+$routes->get('admin/edit-slider/(:num)', 'Admin\Dashboard::editSlider/$1');
+$routes->post('admin/update-slider/(:num)', 'Admin\Dashboard::updateSlider/$1');
+$routes->get('admin/delete-slider/(:num)', 'Admin\Dashboard::deleteSlider/$1');
 
 
 

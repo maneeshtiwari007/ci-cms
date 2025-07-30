@@ -4,9 +4,10 @@
 
 <!-- JS -->
 <script src="<?= base_url('front/assets/js/bootstrap.bundle.min.js') ?>"></script>
-<script src="<?= base_url('front/assets/js/calculate-price') ?>"></script>
-<script src="<?= base_url('front/assets/js/jquery-3.6.0.min') ?>"></script>
-<script src="<?= base_url('front/assets/js/custom') ?>"></script>
+<script src="<?= base_url('front/assets/js/jquery-3.6.0.min.js') ?>"></script>
+<script src="<?= base_url('front/assets/js/calculate-price.js') ?>"></script>
+
+<script src="<?= base_url('front/assets/js/custom.js') ?>"></script>
 
 <!-- Shrink on Scroll Script -->
 <script>

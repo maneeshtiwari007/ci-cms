@@ -6,7 +6,7 @@
     <!--begin::Copyright-->
     <strong>
         Copyright &copy; <?= date('Y') ?>&nbsp;
-        <a href="#" class="text-decoration-none">CI-CMS</a>.
+        <a href="#" class="text-decoration-none">Prime IT</a>.
     </strong>
     All rights reserved.
     <!--end::Copyright-->
