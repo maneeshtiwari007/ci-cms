@@ -7,18 +7,11 @@
   <!-- Full Width Carousel Slider -->
   <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" >
     <div class="carousel-inner">
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <img src="https://placehold.co/600x400?text=Slide+1" alt="Slide 1" class="d-block w-100">
-      </div>
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <img src="https://placehold.co/600x400?text=Slide+2" alt="Slide 2" class="d-block w-100">
-      </div>
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <img src="https://placehold.co/600x400?text=Slide+3" alt="Slide 3" class="d-block w-100">
-      </div>
+      <?php foreach ($sliders as $index => $slider): ?>
+        <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+          <img src="<?= base_url('uploads/sliders/' . $slider['image']) ?>" class="d-block w-100" alt="Slide <?= $index + 1 ?>">
+        </div>
+      <?php endforeach; ?>
     </div>
 
     <!-- Controls -->

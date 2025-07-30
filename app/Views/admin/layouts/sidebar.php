@@ -5,11 +5,11 @@
         <!--begin::Brand Link-->
         <a href="#" class="brand-link">
             <!--begin::Brand Image-->
-            <img src="<?= base_url('backend/img/AdminLTELogo.png') ?>" alt="CI-CMS Logo"
-                class="brand-image opacity-75 shadow" />
+            <img src="<?= base_url('front/assets/images/logo.png') ?>" alt=""
+                class="brand-image shadow" />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">CI-CMS</span>
+            <!-- <span class="brand-text fw-light">CI-CMS</span> -->
             <!--end::Brand Text-->
         </a>
         <!--end::Brand Link-->
@@ -50,6 +50,12 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/slider') ?>" class="nav-link">
+                        <i class="nav-icon bi bi-browser-edge"></i>
+                        <p>Slider Management</p>
+                    </a>
+                </li> 
                 <li class="nav-item">
                     <a href="<?= base_url('admin/content/list') ?>" class="nav-link">
                         <i class="nav-icon bi bi-browser-edge"></i>
