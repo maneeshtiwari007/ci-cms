@@ -36,10 +36,10 @@
                   <!-- Blog Card Start -->
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                          <a href="blog-detail.html" class="">  <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
+                          <a href="<?= base_url('/blog/details') ?>" class="">  <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -53,10 +53,10 @@
                   
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class="">  <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class="">  <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -69,7 +69,7 @@
               
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
                           <h5 class="card-title">Buying a computer Monitor Guide</h5>
@@ -86,10 +86,10 @@
                       <!-- Blog Card Start -->
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class="">  <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a></a>
+                          <a href="<?= base_url('/blog/details') ?>" class="">  <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -103,10 +103,10 @@
                   
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -119,10 +119,10 @@
               
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -136,10 +136,10 @@
                       <!-- Blog Card Start -->
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -153,10 +153,10 @@
                   
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
@@ -169,10 +169,10 @@
               
                   <div class="col-md-4">
                       <div class="card h-100 ">
-                      <a href="blog-detail.html" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
+                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
                       <div class="card-body">
                           <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="blog-detail.html" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
+                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
                           <p class="card-text">
                           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
                           </p>
