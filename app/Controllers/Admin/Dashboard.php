@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ContentModel;
 use App\Models\SliderModel;
+use App\Models\ItCostInquiryModel;
 
 class Dashboard extends BaseController
 {
@@ -321,6 +322,21 @@ public function updateSlider($id)
 
         return redirect()->to(base_url('admin/slider'))->with('error', 'Slider not found.');
     }
+
+    public function itCostList()
+    {
+        return view('admin/costinquiry/it_cost_inquiries_list');
+    }
+
+public function getItCostData()
+{
+     $db = \Config\Database::connect();
+    $builder = $db->table('it_cost_inquiries');
+
+    $data = $builder->orderBy('created_at', 'DESC')->get()->getResult();
+
+    return $this->response->setJSON($data);
+}
 
 
 

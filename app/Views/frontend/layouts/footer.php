@@ -9,6 +9,7 @@
 
 <script src="<?= base_url('front/assets/js/custom.js') ?>"></script>
 
+
 <!-- Shrink on Scroll Script -->
 <script>
   const navbar = document.getElementById("main-navbar");

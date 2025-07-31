@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use App\Models\ContentModel;
 use App\Models\SliderModel;
-use App\Models\CalculatePriceInquiryModel;
+use App\Models\ItCostInquiryModel;
 
 class Frontend extends BaseController
 {
@@ -84,23 +84,87 @@ class Frontend extends BaseController
         return view('frontend/email_support_and_services', $data); 
     }
 
-     public function saveInquiry()
-    {  
-        if ($this->request->getMethod() === 'post') {
-            $data = [
-                'name'  => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email'),
-                'phone' => $this->request->getPost('phone'),
-            ];
-
-            $inquiryModel = new CalculatePriceInquiryModel();
-            $inquiryModel->save($data);
-
-            return redirect()->back()->with('success', 'Inquiry submitted successfully!');
-        }
-
-        return redirect()->back()->with('error', 'Invalid request.');
+    public function contactUs(){
+        $data['pageTitle'] = 'Contact Us';
+        return view('frontend/contact_us', $data); 
     }
+
+    public function submitForm()
+{
+    helper(['form', 'url']);
+    $validation = \Config\Services::validation();
+
+    $rules = [
+        'name'  => 'required|min_length[3]',
+        'email' => 'required|valid_email',
+        'phone' => 'required|min_length[10]|max_length[15]',
+    ];
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+    }
+
+    $request = $this->request;
+
+    // Prepare cost summary data
+    $costSummary = [
+        [
+            'item'     => 'Computers',
+            'quantity' => $request->getPost('totailComputer'),
+            'cost'     => $request->getPost('costComputersHidden')
+        ],
+        [
+            'item'     => 'Servers',
+            'quantity' => $request->getPost('totailserver'),
+            'cost'     => $request->getPost('costServersHidden')
+        ],
+        [
+            'item'     => 'Network Printers',
+            'quantity' => $request->getPost('printers'),
+            'cost'     => $request->getPost('costNetworksPrintersHidden')
+        ],
+        [
+            'item'     => 'Network Devices',
+            'quantity' => $request->getPost('networkDevices'),
+            'cost'     => $request->getPost('costNetworkDevicesHidden')
+        ],
+        [
+            'item'     => 'Offsite Backup',
+            'quantity' => ($request->getPost('offSiteBackup') === 'Yes') ? 1 : 0,
+            'cost'     => $request->getPost('offSiteBackupHidden')
+        ],
+        [
+            'item'     => 'Imaging Based Backup',
+            'quantity' => ($request->getPost('imagingBasedBackup') === 'Yes') ? 1 : 0,
+            'cost'     => $request->getPost('imagingBasedBackupHidden')
+        ],
+    ];
+
+    $data = [
+        'helpdesk_support'      => $request->getPost('helpdesk'),
+        'num_computers'         => $request->getPost('totailComputer'),
+        'num_printers'          => $request->getPost('printers'),
+        'num_network_devices'   => $request->getPost('networkDevices'),
+        'has_servers'           => $request->getPost('ifserver'),
+        'num_servers'           => ($request->getPost('ifserver') == 'Yes') ? $request->getPost('totailserver') : null,
+        'onsite_support_rate'   => $request->getPost('supportrate'),
+        'store_offsite_backup'  => $request->getPost('offSiteBackup'),
+        'offsite_backup_cost'   => ($request->getPost('offSiteBackup') == 'Yes') ? 50.00 : null,
+        'imaging_based_backup'  => $request->getPost('imagingBasedBackup'),
+        'imaging_backup_cost'   => ($request->getPost('imagingBasedBackup') == 'Yes') ? 75.00 : null,
+        'name'                  => $request->getPost('name'),
+        'email'                 => $request->getPost('email'),
+        'phone'                 => $request->getPost('phone'),
+        'cost_summary'          => json_encode($costSummary),
+        'total_monthly_cost'    => $request->getPost('totalMothlyTaxCostHidden')
+    ];
+
+    $model = new ItCostInquiryModel();
+    $model->save($data);
+
+    return redirect()->to('/calculate-price')->with('success', 'Inquiry submitted successfully!');
+}
+
 
     
 }

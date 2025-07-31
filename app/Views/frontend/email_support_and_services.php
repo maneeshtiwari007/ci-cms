@@ -127,7 +127,7 @@
 <section class="py-5 text-center text-bg-warning">
   <div class="container text-center py-5">
     <h2 class="mb-4 text-black">Call for help now! 1300 141822</h2>
-    <input name="submit" type="submit" value="Contact Us">
+    <a href="<?= base_url('contact-us') ?>" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 

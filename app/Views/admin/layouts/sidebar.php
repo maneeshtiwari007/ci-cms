@@ -57,6 +57,12 @@
                     </a>
                 </li> 
                 <li class="nav-item">
+                    <a href="<?= base_url('admin/it-cost-inquiries') ?>" class="nav-link">
+                        <i class="bi bi-sliders"></i>
+                        <p>Cost Management</p>
+                    </a>
+                </li> 
+                <li class="nav-item">
                     <a href="<?= base_url('admin/content/list') ?>" class="nav-link">
                         <i class="nav-icon bi bi-browser-edge"></i>
                         <p>Page Content</p>

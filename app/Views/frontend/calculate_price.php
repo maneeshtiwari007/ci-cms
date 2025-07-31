@@ -29,7 +29,7 @@
   <!-- HTML5 Form Structure (Bootstrap 5 Ready) -->
 <div class="container py-5">
   <h3 class="mb-4">How much would Australia wide, 9 to 5 and 24/7 IT support cost for your business?</h3>
-  <form class="it-cost-form" id="it-cost-form">
+  <form class="it-cost-form" id="it-cost-form" method="post" action="<?= site_url('calculate-price'); ?>">
     <div class="row">
       <div class="col-md-6">
         <div class="row mb-3">
@@ -201,20 +201,29 @@
 <div class="row">
   <div class="col-md-6">
     <div class="mb-3">
-      <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
-    </div>
+  <label for="name" class="form-label">Name:</label>
+  <input type="text" class="form-control" id="name" name="name" value="<?= old('name') ?>">
+  <?php if (session('errors.name')): ?>
+    <small class="text-danger"><?= session('errors.name') ?></small>
+  <?php endif; ?>
+</div>
   </div>
   <div class="col-md-6">
     <div class="mb-3">
       <label for="email" class="form-label">Your Email:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address">
+      <?php if (session('errors.email')): ?>
+        <small class="text-danger"><?= session('errors.email') ?></small>
+      <?php endif; ?>
     </div>
   </div>
   <div class="col-md-6">
     <div class="mb-3">
       <label for="phone" class="form-label">Phone:</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+      <?php if (session('errors.phone')): ?>
+        <small class="text-danger"><?= session('errors.phone') ?></small>
+      <?php endif; ?>
     </div>
   </div>
   <div class="col-md-12">
@@ -243,5 +252,21 @@
 
 
 </section>
+<script src="<?= base_url('assets/js/jquery-3.7.0.min.js') ?>"></script>
+<link rel="stylesheet" href="<?= base_url('assets/toastr/toastr.min.css') ?>">
+
+<!-- Toastr JS -->
+<script src="<?= base_url('assets/toastr/toastr.min.js') ?>"></script>
+
+<script>
+    <?php if (session()->getFlashdata('success')): ?>
+        toastr.success("<?= session()->getFlashdata('success'); ?>");
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')): ?>
+        toastr.error("<?= session()->getFlashdata('error'); ?>");
+    <?php endif; ?>
+</script>
+
 
 <?= $this->endSection() ?>
