@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="<?= base_url('/blog') ?>">Blog</a></li>
         <li class="nav-item">
-          <a class="nav-link btn bg-dark btn-primary text-white px-3 ms-lg-2" href="<?= base_url('/contact-us') ?>">Ready to Talk</a>
+          <a class="nav-link btn bg-dark ready-to-talk  btn-primary text-white px-3 ms-lg-2" href="<?= base_url('/contact-us') ?>">Ready to Talk</a>
         </li>
       </ul>
     </div>
