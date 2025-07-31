@@ -139,8 +139,7 @@ public function storeSlider()
         ],
         'ordering' => 'required|numeric'
     ]);
-
-    if (!$validation->withRequest($this->request)->run()) {
+     if (!$validation->withRequest($this->request)->run()) {
         return view('admin/slider/add', [
             'validation' => $validation
         ]);
@@ -155,10 +154,10 @@ public function storeSlider()
         $width = $imageSize[0];
         $height = $imageSize[1];
 
-        if ($width < 233 || $height < 500) {
+        if ($width < 500 && $height < 300) {
             return redirect()->back()
                 ->withInput()
-                ->with('error', 'Image must be at least 533 x 800 pixels.');
+                ->with('error', 'Image must be at least 500 x 300 pixels.');
         }
 
         // Shift existing orderings if needed
@@ -253,8 +252,8 @@ public function updateSlider($id)
         $width = $imageSize[0];
         $height = $imageSize[1];
 
-        if ($width < 533 || $height < 800) {
-            return redirect()->back()->withInput()->with('error', 'Image must be at least 533 x 800 pixels.');
+        if ($width < 500 && $height < 300) {
+            return redirect()->back()->withInput()->with('error', 'Image must be at least 500 x 300 pixels.');
         }
 
         $imageName = $image->getRandomName();

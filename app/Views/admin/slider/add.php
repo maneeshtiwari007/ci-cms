@@ -39,6 +39,11 @@
                     <div class="mb-3">
                         <label for="image" class="form-label">Select Image <span class="text-danger">*</span></label>
                         <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+                         <?php if (isset($validation) && $validation->hasError('image')): ?>
+                            <div class="text-danger">
+                                <?= $validation->getError('image') ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="mb-3">
                       <label for="ordering" class="form-label">Ordering <span class="text-danger">*</span></label>
