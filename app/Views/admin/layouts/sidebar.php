@@ -21,12 +21,12 @@
             <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column position-relative" data-lte-toggle="treeview" role="navigation"
                 aria-label="Main navigation" data-accordion="false" id="navigation">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?= base_url('admin/dashboard') ?>" class="nav-link active">
                         <i class="nav-icon bi bi-palette"></i>
                         <p>Dashboard</p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item d-none">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-ui-checks-grid"></i>
@@ -52,7 +52,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?= base_url('admin/slider') ?>" class="nav-link">
-                        <i class="nav-icon bi bi-browser-edge"></i>
+                        <i class="bi bi-sliders"></i>
                         <p>Slider Management</p>
                     </a>
                 </li> 

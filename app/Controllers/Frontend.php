@@ -15,7 +15,7 @@ class Frontend extends BaseController
         $slug = 'home'; // The slug you're targeting
 
         $content = $model->where('slug', $slug)->first();
-        $sliders = $sliderModel->where('status', 1)->findAll(); 
+        $sliders = $sliderModel->where('status', 1)->orderBy('ordering')->findAll(); 
 
         $data = [
             'pageTitle' => 'Dashboard',
@@ -64,8 +64,28 @@ class Frontend extends BaseController
         return view('frontend/complete_business', $data);
     }
 
+    public function digitalMarketing(){
+        $data['pageTitle'] = 'Digital Marketing';
+        return view('frontend/digital_markrting', $data);
+    }
+
+    public function businessItSupports(){
+        $data['pageTitle'] = 'Business It Supports';
+        return view('frontend/businessItSupports', $data); 
+    }
+
+    public function cloudStroge(){
+      $data['pageTitle'] = 'cloud storage backup';
+        return view('frontend/cloud_storage_backup', $data);   
+    }
+
+    public function emailSupportAndServices(){
+        $data['pageTitle'] = 'Email Support And Services';
+        return view('frontend/email_support_and_services', $data); 
+    }
+
      public function saveInquiry()
-    {  die('ok');
+    {  
         if ($this->request->getMethod() === 'post') {
             $data = [
                 'name'  => $this->request->getPost('name'),

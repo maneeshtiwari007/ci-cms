@@ -23,13 +23,13 @@
             <li><a class="dropdown-item" href="<?= base_url('/web-development') ?>">Web Development</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/calculate-price') ?>">Calculate Monthly Cost</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/complete-business') ?>">Complete Business</a></li>
-            <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-            <li><a class="dropdown-item" href="#">Business IT Support</a></li>
-            <li><a class="dropdown-item" href="#">Cloud Storage & Backup</a></li>
-            <li><a class="dropdown-item" href="#">Email Support</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('/services/digital-marketing') ?>">Digital Marketing</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('/services/business-it-support') ?>">Business IT Support</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('/services/cloud-storage-backup') ?>">Cloud Storage & Backup</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('/services/email-support-and-services') ?>">Email Support and Services</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= base_url('/blog') ?>">Blog</a></li>
         <li class="nav-item">
           <a class="nav-link btn bg-dark btn-primary text-white px-3 ms-lg-2" href="#">Ready to Talk</a>
         </li>

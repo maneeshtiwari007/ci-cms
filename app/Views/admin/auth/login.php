@@ -23,7 +23,7 @@
     <div class="login-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <h1 class="mb-0"><b>CI-</b>CMS</h1>
+                <h1 class="mb-0"><b>Prime</b>IT</h1>
             </div>
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
