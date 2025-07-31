@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $this->renderSection('pageTitle') ?> | CI-CMS</title>
+    <title><?= $this->renderSection('pageTitle') ?></title>
     <!-- Primary Meta Tags -->
     <meta name="title" content="Coming Soon">
     <meta name="description" content="In the meantime, Stay tuned. We are almost ready to launch.">
