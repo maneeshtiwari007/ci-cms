@@ -13,16 +13,16 @@
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">About</a>
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="<?= base_url('/why-choose-us') ?>">Why Choose Us?</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('/careers') ?>">Careers</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('about/why-choose-us/') ?>">Why Choose Us?</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('/prime-it/careers') ?>">Careers</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= base_url('/web-development') ?>">Web Development</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('services/web-development') ?>">Web Development</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/calculate-price') ?>">Calculate Monthly Cost</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('/complete-business') ?>">Complete Business</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('services/complete-business') ?>">Complete Business</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/services/digital-marketing') ?>">Digital Marketing</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/services/business-it-support') ?>">Business IT Support</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/services/cloud-storage-backup') ?>">Cloud Storage & Backup</a></li>
@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="<?= base_url('/blog') ?>">Blog</a></li>
         <li class="nav-item">
-          <a class="nav-link btn bg-dark btn-primary text-white px-3 ms-lg-2" href="#">Ready to Talk</a>
+          <a class="nav-link btn bg-dark btn-primary text-white px-3 ms-lg-2" href="<?= base_url('/contact-us') ?>">Ready to Talk</a>
         </li>
       </ul>
     </div>
