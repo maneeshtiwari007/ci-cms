@@ -32,7 +32,7 @@ public function login()
                 session()->set($sessionData);
 
                 // Role-based redirect
-                return redirect()->to(base_url('admin/dashboard'));
+                return redirect()->to(base_url('admin/slider'));
 
             } else {
                 session()->setFlashdata('error', 'Invalid Password');

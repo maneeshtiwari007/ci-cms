@@ -13,7 +13,17 @@ $routes->get('/why-choose-us', 'Frontend::whyChooseUs');
 $routes->get('/careers', 'Frontend::careers');  
 $routes->get('/web-development', 'Frontend::webDevelopment'); 
 $routes->get('/calculate/price', 'Frontend::calculatePrice'); 
-$routes->get('/complete-business', 'Frontend::completeBusiness'); 
+$routes->get('/complete-business', 'Frontend::completeBusiness');  
+$routes->get('/services/digital-marketing', 'Frontend::digitalMarketing');  
+$routes->get('/services/business-it-support', 'Frontend::businessItSupports'); 
+$routes->get('/services/cloud-storage-backup', 'Frontend::cloudStroge');
+$routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndServices');
+$routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndServices');
+
+$routes->get('/blog', 'BlogController::blog');
+$routes->get('/blog/details', 'BlogController::blogDetails');
+
+
 $routes->post('/save-inquiry', 'Frontend::saveInquiry');
 
 $routes->get('admin', 'Admin\Auth::login'); 
