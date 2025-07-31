@@ -39,6 +39,11 @@
                                         <img src="<?= base_url('uploads/sliders/' . $slider['image']) ?>" alt="Slider Image" height="80">
                                     </div>
                                 <?php endif; ?>
+                                 <?php if (isset($validation) && $validation->hasError('image')): ?>
+                                    <div class="text-danger">
+                                        <?= $validation->getError('image') ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Ordering</label>
