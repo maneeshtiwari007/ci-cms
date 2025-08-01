@@ -44,42 +44,79 @@
       </div>
 
       <!-- Right Form -->
-      <div class="col-lg-6">
-        <form action="/contact-us/#wpcf7-f645-p80-o1" method="post" class="needs-validation" novalidate>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" name="your-name" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="email" name="your-email" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="contact" class="form-label">Contact No</label>
-            <input type="text" class="form-control" id="contact" name="contact" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="subject" name="your-subject">
-          </div>
-
-          <div class="mb-3">
-            <label for="message" class="form-label">Your Message</label>
-            <textarea class="form-control" id="message" name="your-message" rows="5"></textarea>
-          </div>
-
-          <!-- Google reCAPTCHA placeholder -->
-          <div class="mb-3">
-            <!-- Place your reCAPTCHA script/integration here -->
-            <div>[recaptcha]</div>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Send</button>
-        </form>
+     <div class="col-lg-6">
+      
+  <form action="<?= base_url('contact-submit') ?>" method="post" class="needs-validation" novalidate>
+  
+  <!-- Name -->
+  <div class="mb-3">
+    <label for="name" class="form-label">Your Name</label>
+    <input type="text" class="form-control <?= isset($validation) && $validation->hasError('your-name') ? 'is-invalid' : '' ?>" name="your-name" value="<?= old('your-name') ?>" required>
+    <?php if (isset($validation) && $validation->hasError('your-name')): ?>
+      <div class="invalid-feedback">
+        <?= $validation->getError('your-name') ?>
       </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Your Email</label>
+    <input type="email" class="form-control <?= isset($validation) && $validation->hasError('your-email') ? 'is-invalid' : '' ?>" name="your-email" value="<?= old('your-email') ?>" required>
+    <?php if (isset($validation) && $validation->hasError('your-email')): ?>
+      <div class="invalid-feedback">
+        <?= $validation->getError('your-email') ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- Contact -->
+  <div class="mb-3">
+    <label for="contact" class="form-label">Contact No</label>
+    <input type="text" class="form-control <?= isset($validation) && $validation->hasError('contact') ? 'is-invalid' : '' ?>" name="contact" value="<?= old('contact') ?>" required>
+    <?php if (isset($validation) && $validation->hasError('contact')): ?>
+      <div class="invalid-feedback">
+        <?= $validation->getError('contact') ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- Subject -->
+  <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" class="form-control <?= isset($validation) && $validation->hasError('your-subject') ? 'is-invalid' : '' ?>" name="your-subject" value="<?= old('your-subject') ?>">
+    <?php if (isset($validation) && $validation->hasError('your-subject')): ?>
+      <div class="invalid-feedback">
+        <?= $validation->getError('your-subject') ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- Message -->
+  <div class="mb-3">
+    <label for="message" class="form-label">Your Message</label>
+    <textarea class="form-control <?= isset($validation) && $validation->hasError('your-message') ? 'is-invalid' : '' ?>" name="your-message"><?= old('your-message') ?></textarea>
+    <?php if (isset($validation) && $validation->hasError('your-message')): ?>
+      <div class="invalid-feedback">
+        <?= $validation->getError('your-message') ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- reCAPTCHA -->
+  <div class="mb-3">
+    <div class="g-recaptcha" data-sitekey="<?= getenv('recaptcha.secret') ?>"></div>
+    <?php if (isset($validation) && $validation->hasError('g-recaptcha-response')): ?>
+      <div class="text-danger small">
+        <?= $validation->getError('g-recaptcha-response') ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+</div>
 
     </div>
   </div>
@@ -95,11 +132,42 @@
 
 
 
-<section class="py-5 text-center text-bg-warning">
+<section class="py-5 text-center text-bg-warning cto-block">
   <div class="container text-center py-5">
     <h2 class="mb-4 text-black">Call for help now! 1300 141822</h2>
     <a href="<?= base_url('contact-us') ?>" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="<?= base_url('assets/js/jquery-3.7.0.min.js') ?>"></script>
+<link rel="stylesheet" href="<?= base_url('assets/toastr/toastr.min.css') ?>">
+
+<!-- Toastr JS -->
+<script src="<?= base_url('assets/toastr/toastr.min.js') ?>"></script>
+<script>
+  <?php if (session()->getFlashdata('success')): ?>
+        toastr.success("<?= session()->getFlashdata('success'); ?>");
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')): ?>
+        toastr.error("<?= session()->getFlashdata('error'); ?>");
+    <?php endif; ?>
+</script>
+
+
+<script>
+$recaptchaSecret = getenv('recaptcha.secret');
+$recaptchaSecret = $recaptchaSecret;
+$recaptchaResponse = $_POST['g-recaptcha-response'];
+
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+$responseKeys = json_decode($response, true);
+
+if(intval($responseKeys["success"]) !== 1) {
+  echo "Please complete the reCAPTCHA";
+} else {
+  // process form
+}
+</script>
 <?= $this->endSection() ?>

@@ -47,26 +47,46 @@
 <section class="py-5 bg-light">
   <div class="container">
     <h2 class="mb-4">Send Your Resume.</h2>
-    <form method="post" action="your-backend-script.php" enctype="multipart/form-data" class="p-4 border rounded shadow-sm">
+    <form method="post" action="<?= base_url('career/send-resume') ?>" enctype="multipart/form-data">
+    <?= csrf_field(); ?>
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="name" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="name" name="name" required>
+          <input type="text" class="form-control" id="name" name="name">
+            <?php if(isset($validation) && $validation->hasError('name')): ?>
+            <small class="text-danger"><?= $validation->getError('name') ?></small>
+          <?php endif; ?>
         </div>
       
         <div class="col-md-6 mb-3">
           <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" name="email" required>
+          <input type="email" class="form-control" id="email" name="email">
+           <?php if(isset($validation) && $validation->hasError('email')): ?>
+            <small class="text-danger"><?= $validation->getError('email') ?></small>
+          <?php endif; ?>
         </div>
       
         <div class="col-md-6 mb-3">
           <label for="message" class="form-label">Your Message</label>
-          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+          <?php if(isset($validation) && $validation->hasError('message')): ?>
+            <small class="text-danger"><?= $validation->getError('message') ?></small>
+        <?php endif; ?>
         </div>
       
         <div class="col-md-6 mb-3">
           <label for="resume" class="form-label">Upload Resume</label>
-          <input class="form-control" type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+          <input class="form-control" type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+          <?php if(isset($validation) && $validation->hasError('resume')): ?>
+            <small class="text-danger"><?= $validation->getError('resume') ?></small>
+          <?php endif; ?>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="g-recaptcha" data-sitekey="<?= getenv('recaptcha.secret') ?>"></div>
+          <?php if(isset($validation) && $validation->hasError('g-recaptcha-response')): ?>
+            <small class="text-danger"><?= $validation->getError('g-recaptcha-response') ?></small>
+          <?php endif; ?>
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Send</button>
@@ -76,11 +96,39 @@
 </section>
 
 
-<section class="py-5 text-center text-bg-warning">
+<section class="py-5 text-center text-bg-warning cto-block">
   <div class="container text-center py-5">
     <h2 class="mb-4 text-black">Call for help now! 1300 141822</h2>
     <a href="<?= base_url('contact-us') ?>" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
+<script src="<?= base_url('assets/js/jquery-3.7.0.min.js') ?>"></script>
+<link rel="stylesheet" href="<?= base_url('assets/toastr/toastr.min.css') ?>">
 
+<!-- Toastr JS -->
+<script src="<?= base_url('assets/toastr/toastr.min.js') ?>"></script>
+<script>
+  <?php if (session()->getFlashdata('success')): ?>
+        toastr.success("<?= session()->getFlashdata('success'); ?>");
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')): ?>
+        toastr.error("<?= session()->getFlashdata('error'); ?>");
+    <?php endif; ?>
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+$recaptchaSecret = getenv('recaptcha.secret');
+$recaptchaSecret = $recaptchaSecret;
+$recaptchaResponse = $_POST['g-recaptcha-response'];
+
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+$responseKeys = json_decode($response, true);
+
+if(intval($responseKeys["success"]) !== 1) {
+  echo "Please complete the reCAPTCHA";
+} else {
+  // process form
+}
+</script>
 <?= $this->endSection() ?>

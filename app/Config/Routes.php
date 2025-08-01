@@ -21,6 +21,9 @@ $routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndS
 $routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndServices');
 $routes->get('/contact-us', 'Frontend::contactUs');
 
+$routes->post('/contact-submit', 'Frontend::submit');
+$routes->post('/career/send-resume', 'Frontend::submitResume');
+
 $routes->post('/calculate-price', 'Frontend::submitForm');
 
 $routes->get('/blog', 'BlogController::blog');
@@ -58,6 +61,26 @@ $routes->get('admin/delete-slider/(:num)', 'Admin\Dashboard::deleteSlider/$1');
 
 $routes->get('admin/it-cost-inquiries', 'Admin\Dashboard::itCostList');
 $routes->get('admin/it-cost-inquiries/list', 'Admin\Dashboard::getItCostData');
+
+
+// Blog Route Start
+
+$routes->post('posts/create', 'Admin\PostController::create');
+$routes->get('posts/create', 'Admin\PostController::createView');
+$routes->get('posts/list', 'Admin\PostController::list', ['as' => 'postList']);
+$routes->get('posts/delete/(:num)', 'Admin\PostController::delete/$1', ['as' => 'postDelete']);
+$routes->post('posts/update/(:segment)', 'Admin\PostController::update/$1');
+$routes->get('posts/update/(:segment)', 'Admin\PostController::updateView/$1');
+
+$routes->get('categories/list', 'Admin\Categories::list', ['as' => 'categoryList']);
+$routes->get('categories/create', 'Admin\Categories::createView');
+$routes->post('categories/create', 'Admin\Categories::create');
+$routes->get('categories/update/(:segment)', 'Admin\Categories::updateView/$1', ['as' => 'categoryUpdateView']);
+$routes->post('categories/update/(:segment)', 'Admin\Categories::update/$1');
+$routes->get('categories/delete/(:num)', 'Admin\Categories::delete/$1', ['as' => 'categoryDelete']);
+
+// blog Route End
+  
 
 
 
