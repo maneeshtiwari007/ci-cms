@@ -124,7 +124,7 @@
   
 </section>
 
-<section class="py-5 text-center text-bg-warning">
+<section class="py-5 text-center text-bg-warning cto-block">
   <div class="container text-center py-5">
     <h2 class="mb-4 text-black">Call for help now! 1300 141822</h2>
     <a href="<?= base_url('contact-us') ?>" class="btn btn-primary">Contact Us</a>

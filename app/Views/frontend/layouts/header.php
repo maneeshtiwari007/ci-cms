@@ -19,5 +19,20 @@
   <link href="<?= base_url('front/assets/css/bootstrap.min.css') ?>" rel="stylesheet">
   <link href="<?= base_url('front/assets/css/bootstrap-icons.css') ?>" rel="stylesheet">
   <link href="<?= base_url('front/assets/css/style.css') ?>" rel="stylesheet">
-
+<style>
+      .cto-block .btn {
+        background: linear-gradient(135deg, #007bff, #00d4ff);
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 30px;
+        border: 0px;
+    }
+    .cto-block .btn:hover{
+        background: linear-gradient(135deg, #0056b3, #00aaff);
+        border: 0px;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+</style>
 </head>
