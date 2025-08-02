@@ -27,29 +27,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li> -->
-                <li class="nav-item d-none">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon bi bi-ui-checks-grid"></i>
-                        <p>
-                            Components
-                            <i class="nav-arrow bi bi-chevron-right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon bi bi-circle"></i>
-                                <p>Components 1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon bi bi-circle"></i>
-                                <p>Components 2</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+               
                 <li class="nav-item">
                     <a href="<?= base_url('admin/slider') ?>" class="nav-link">
                         <i class="bi bi-sliders"></i>
@@ -68,6 +46,29 @@
                         <i class="nav-icon bi bi-browser-edge"></i>
                         <p>Page Content</p>
                     </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon bi bi-ui-checks-grid"></i>
+                        <p>
+                           Blog Management
+                         <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/categories') ?>" class="nav-link">
+                                <i class="nav-icon bi bi-circle"></i>
+                                <p>Blog Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin/blogs') ?>" class="nav-link">
+                                <i class="nav-icon bi bi-circle"></i>
+                                <p>Blog List</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item d-none">
                     <a href="#" class="nav-link">

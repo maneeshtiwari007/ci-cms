@@ -65,19 +65,24 @@ $routes->get('admin/it-cost-inquiries/list', 'Admin\Dashboard::getItCostData');
 
 // Blog Route Start
 
-$routes->post('posts/create', 'Admin\PostController::create');
-$routes->get('posts/create', 'Admin\PostController::createView');
-$routes->get('posts/list', 'Admin\PostController::list', ['as' => 'postList']);
-$routes->get('posts/delete/(:num)', 'Admin\PostController::delete/$1', ['as' => 'postDelete']);
-$routes->post('posts/update/(:segment)', 'Admin\PostController::update/$1');
-$routes->get('posts/update/(:segment)', 'Admin\PostController::updateView/$1');
+$routes->group('admin/categories', function($routes) {
+    $routes->get('/', 'Admin\CategoryController::index');
+    $routes->get('create', 'Admin\CategoryController::create');
+    $routes->post('store', 'Admin\CategoryController::store');
+    $routes->get('edit/(:num)', 'Admin\CategoryController::edit/$1');
+    $routes->post('update/(:num)', 'Admin\CategoryController::update/$1');
+    $routes->post('delete/(:num)', 'Admin\CategoryController::delete/$1');
+});
 
-$routes->get('categories/list', 'Admin\Categories::list', ['as' => 'categoryList']);
-$routes->get('categories/create', 'Admin\Categories::createView');
-$routes->post('categories/create', 'Admin\Categories::create');
-$routes->get('categories/update/(:segment)', 'Admin\Categories::updateView/$1', ['as' => 'categoryUpdateView']);
-$routes->post('categories/update/(:segment)', 'Admin\Categories::update/$1');
-$routes->get('categories/delete/(:num)', 'Admin\Categories::delete/$1', ['as' => 'categoryDelete']);
+$routes->group('admin/blogs', function($routes) {
+    $routes->get('/', 'Admin\BlogController::index');
+    $routes->get('create', 'Admin\BlogController::create');
+    $routes->post('store', 'Admin\BlogController::store');
+    $routes->get('edit/(:num)', 'Admin\BlogController::edit/$1');
+    $routes->post('update/(:num)', 'Admin\BlogController::update/$1');
+    $routes->get('delete/(:num)', 'Admin\BlogController::delete/$1');
+});
+
 
 // blog Route End
   
