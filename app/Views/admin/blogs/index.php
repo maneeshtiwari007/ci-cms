@@ -7,16 +7,14 @@
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Blog List</h4>
         <a href="<?= base_url('admin/blogs/create') ?>" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Add Blog
+            <i class="bi bi-plus-lg me-2"></i>Add Blog
         </a>
     </div>
 
-    <div class="card shadow rounded-4">
-
+    <div class="card border-0 rounded-2">
         <div class="card-body">
-
             <div class="table-responsive">
-                <table id="blogTable" class="table table-bordered table-striped">
+                <table id="blogTable" class="table table-style-2 table-hover display no-wrap" width="100%">
                     <thead>
                         <tr>
                             <th>#</th>
