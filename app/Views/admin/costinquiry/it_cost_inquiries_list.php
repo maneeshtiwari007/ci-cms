@@ -14,12 +14,12 @@
 
 <div class="app-content-body">
     <div class="container-fluid">
-        <div class="card">
+         <div class="card border-0 rounded-2">
             <div class="card-body">
                 <!-- ✅ Responsive table wrapper -->
                 <div class="table-responsive">
-                    <table id="inquiryTable" class="table table-bordered table-striped nowrap" style="width: 100%;">
-                        <thead>
+                    <table id="inquiryTable" class="table table-style-2 table-hover display no-wrap" width="100%">
+                        <thead class="align-middle">
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
@@ -40,7 +40,7 @@
                                 <th>Created At</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody class="align-middle"></tbody>
                     </table>
                 </div>
             </div>
@@ -60,46 +60,83 @@
 <script src="<?= base_url('assets/sweetalert2/sweetalert2.min.js') ?>"></script>
 
 <script>
-    $(document).ready(function () {
-        $('#inquiryTable').DataTable({
-            scrollX: true, // ✅ enable horizontal scroll
-            responsive: false, // don't use responsive mode here
-            ajax: {
-                url: "<?= base_url('admin/it-cost-inquiries/list') ?>",
-                dataSrc: ""
-            },
-            columns: [
-                {
-                    data: null,
-                    render: function (data, type, row, meta) {
-                        return meta.row + 1;
-                    }
-                },
-                { data: 'name' },
-                { data: 'email' },
-                { data: 'phone' },
-                { data: 'helpdesk_support' },
-                { data: 'num_computers' },
-                { data: 'num_printers' },
-                { data: 'num_network_devices' },
-                { data: 'has_servers' },
-                { data: 'num_servers' },
-                { data: 'onsite_support_rate' },
-                { data: 'store_offsite_backup' },
-                { data: 'offsite_backup_cost' },
-                { data: 'imaging_based_backup' },
-                { data: 'imaging_backup_cost' },
-                { data: 'total_monthly_cost' },
-                {
-                    data: 'created_at',
-                    render: function (data) {
-                        const date = new Date(data);
-                        return date.toLocaleDateString();
-                    }
+$(document).ready(function() {
+    $('#inquiryTable').DataTable({
+        scrollCollapse: false,
+        responsive: true,
+        fixedHeader: {
+            header: true
+        },
+        "bLengthChange": false,
+        language: {
+            info: "_START_ - _END_ / _TOTAL_",
+        },
+        scrollX: true, // ✅ enable horizontal scroll
+        ajax: {
+            url: "<?= base_url('admin/it-cost-inquiries/list') ?>",
+            dataSrc: ""
+        },
+        columns: [{
+                data: null,
+                render: function(data, type, row, meta) {
+                    return meta.row + 1;
                 }
-            ]
-        });
+            },
+            {
+                data: 'name'
+            },
+            {
+                data: 'email'
+            },
+            {
+                data: 'phone'
+            },
+            {
+                data: 'helpdesk_support'
+            },
+            {
+                data: 'num_computers'
+            },
+            {
+                data: 'num_printers'
+            },
+            {
+                data: 'num_network_devices'
+            },
+            {
+                data: 'has_servers'
+            },
+            {
+                data: 'num_servers'
+            },
+            {
+                data: 'onsite_support_rate'
+            },
+            {
+                data: 'store_offsite_backup'
+            },
+            {
+                data: 'offsite_backup_cost'
+            },
+            {
+                data: 'imaging_based_backup'
+            },
+            {
+                data: 'imaging_backup_cost'
+            },
+            {
+                data: 'total_monthly_cost'
+            },
+            {
+                data: 'created_at',
+                render: function(data) {
+                    const date = new Date(data);
+                    return date.toLocaleDateString();
+                }
+            }
+        ]
     });
+});
 </script>
 
 <?= $this->endSection() ?>

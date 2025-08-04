@@ -156,7 +156,7 @@
       <div class="col-md-6">
         <h5 class="mb-3">Cost Summary</h5>
         <div class="table-responsive">
-          <table class="table table-bordered table-striped align-middle text-center">
+          <table class="table table-style-2 table-hover">
             <thead class="table-light">
               <tr>
                 <th scope="col">Item</th>

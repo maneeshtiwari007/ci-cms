@@ -5,14 +5,14 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Category List</h4>
         <a href="<?= base_url('admin/categories/create') ?>" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Add New Category
+            <i class="bi bi-plus-lg me-2"></i>Add New Category
         </a>
     </div>
 
-    <div class="card shadow-sm rounded">
+    <div class="card border-0 rounded-2">
         <div class="card-body">
             <div class="table-responsive">
-                <table id="categoryTable" class="table table-bordered table-striped">
+                <table id="categoryTable" class="table table-style-2 table-hover display no-wrap" width="100%">
                     <thead class="table-light">
                         <tr>
                             <th>#</th>

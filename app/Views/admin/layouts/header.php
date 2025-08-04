@@ -51,13 +51,11 @@
 
     <!-- Optional: Your custom CSS -->
     <link rel="stylesheet" href="<?= base_url('backend/css/custom.css') ?>">
-
-    
-        
-        
+    <link rel="stylesheet" href="<?= base_url('backend/css/dataTables.bootstrap4.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('backend/css/responsive.dataTables.min.css') ?>">
 </head>
 
-<body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+<body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-light">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
         <!-- <header class="bg-dark text-white p-3">

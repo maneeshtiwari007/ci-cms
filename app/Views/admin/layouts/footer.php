@@ -28,6 +28,8 @@
 <!--begin::Required Plugin(AdminLTE)-->
 <script src="<?= base_url('backend/js/adminlte.js') ?>"></script>
 <!--end::Required Plugin(AdminLTE)-->
+<script src="<?= base_url('backend/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= base_url('backend/js/dataTables.responsive.min.js') ?>"></script>
 <!--begin::OverlayScrollbars Configure-->
 <script>
 const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';

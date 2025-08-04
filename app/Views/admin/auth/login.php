@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<?= base_url('backend/css/index.css') ?>" media="print" onload="this.media='all'" />
 </head>
 
-<body class="login-page bg-body-secondary">
+<body class="login-page bg-body-blue-dark">
 
     <div class="login-box">
         <div class="card card-outline card-primary">
