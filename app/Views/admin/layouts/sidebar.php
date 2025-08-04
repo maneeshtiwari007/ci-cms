@@ -46,7 +46,20 @@
                         <p>Page Content</p>
                     </a>
                 </li>
+               
                 <li class="nav-item">
+                    <a href="<?= base_url('admin/career/listing') ?>" class="nav-link">
+                        <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
+                        <p>Job Application</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/contacts') ?>" class="nav-link">
+                        <i class="nav-icon bi bi-question-circle-fill"></i>
+                        <p>Contact Us</p>
+                    </a>
+                </li>
+                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-grid"></i>
                         <p>
@@ -68,18 +81,6 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/career/listing') ?>" class="nav-link">
-                        <i class="nav-icon bi bi-hand-thumbs-up-fill"></i>
-                        <p>Job Application</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('admin/contacts') ?>" class="nav-link">
-                        <i class="nav-icon bi bi-question-circle-fill"></i>
-                        <p>Contact Us</p>
-                    </a>
                 </li>
                 <li class="nav-item d-none">
                     <a href="<?= base_url('admin/logout') ?>" class="nav-link text-danger">
