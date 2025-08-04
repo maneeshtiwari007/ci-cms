@@ -205,7 +205,8 @@
     <p class="mb-4 text-white">Different businesses have different needs. Find out which products meet your needs.
       
     </p>
-    <input name="submit" type="submit" value="Get A Consultation">
+    <!-- <input name="submit" type="submit" value="Get A Consultation"> -->
+    <a href="<?= base_url('contact-us') ?>" class="btn btn-primary">Get A Consultation</a>
   </div>
 </section>
 
