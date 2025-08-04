@@ -7,6 +7,8 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\ContentModel;
 use App\Models\SliderModel;
 use App\Models\ItCostInquiryModel;
+use App\Models\JobApplicationModel;
+use App\Models\ContactModel;
 
 class Dashboard extends BaseController
 {
@@ -336,6 +338,19 @@ public function getItCostData()
     $data = $builder->orderBy('created_at', 'DESC')->get()->getResult();
 
     return $this->response->setJSON($data);
+}
+
+public function careerListing(){
+    $model = new JobApplicationModel();
+        $data['applications'] = $model->orderBy('created_at', 'DESC')->findAll();
+
+        return view('admin/careers', $data);
+}
+
+public function contacts(){
+     $model = new ContactModel();
+     $data['contacts'] = $model->orderBy('created_at', 'DESC')->findAll();
+     return view('admin/contacts', $data);
 }
 
 

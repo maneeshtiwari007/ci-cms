@@ -24,9 +24,6 @@
     </nav>
   </div>
 </section>
-
-
-
 <section class="py-5 blog-listing">
 
   <div class="container">
@@ -34,292 +31,110 @@
           <div class="col-lg-9">
               <div class="row g-4">
                   <!-- Blog Card Start -->
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                          <a href="<?= base_url('/blog/details') ?>" class="">  <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Repeat Blog Cards as needed -->
-                  
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class="">  <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-              
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <h5 class="card-title">Buying a computer Monitor Guide</h5>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Blog Card End -->
-                      <!-- Blog Card Start -->
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class="">  <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Repeat Blog Cards as needed -->
-                  
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-              
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Blog Card End -->
-                      <!-- Blog Card Start -->
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-3.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Repeat Blog Cards as needed -->
-                  
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-1.jpeg')?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-              
-                  <div class="col-md-4">
-                      <div class="card h-100 ">
-                      <a href="<?= base_url('/blog/details') ?>" class=""> <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="card-img-top" alt="Blog Image"></a>
-                      <div class="card-body">
-                          <p class=" small mb-1">26 Nov, 2024</p>
-                          <a href="<?= base_url('/blog/details') ?>" class=""> <h5 class="card-title">Buying a computer Monitor Guide</h5></a>
-                          <p class="card-text">
-                          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium…
-                          </p>
-                          <a href="<?= base_url('/blog/details') ?>" class="read-more d-inline-flex align-items-center">
-                          Read More <i class="bi bi-arrow-up-right"></i>
-                          </a>
-                      </div>
-                      </div>
-                  </div>
-                  <!-- Blog Card End -->    
+                  <?php if (!empty($blogs)): ?>
+                    <?php foreach ($blogs as $blog): ?>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <a href="<?= base_url('blog/details/' . $blog['slug']) ?>">
+                                    <img src="<?= base_url('uploads/blogs/' . $blog['image']) ?>" class="card-img-top" alt="<?= esc($blog['title']) ?>">
+                                </a>
+                                <div class="card-body">
+                                    <p class="small mb-1"><?= date('d M, Y', strtotime($blog['created_at'])) ?></p>
+                                    <a href="<?= base_url('blog/details/' . $blog['slug']) ?>">
+                                        <h5 class="card-title"><?= esc($blog['title']) ?></h5>
+                                    </a>
+                                    <p class="card-text">
+                                        <?= character_limiter(strip_tags($blog['description']), 100) ?>
+                                    </p>
+                                    <a href="<?= base_url('blog/details/' . $blog['slug']) ?>" class="read-more d-inline-flex align-items-center">
+                                        Read More <i class="bi bi-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="col-12">
+                        <p>No blogs found.</p>
+                    </div>
+                <?php endif; ?>
+    
               </div>
           </div>
            <!-- Right Sidebar -->
         <div class="col-lg-3 blogSidebar">
           
-          <!-- Search -->
+          
+
           <div class="searchSection">
             <h2>Search</h2>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search...">
-              <button class="btn btn-outline-secondary" type="button">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </div>
+            <form method="get" action="<?= base_url('blog') ?>">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." value="<?= esc($searchTerm ?? '') ?>">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
     
           <!-- Categories -->
-          <div class="widgetSection categorySection">
-            <h3 >Category</h2>
+        <div class="widgetSection categorySection">
+            <h3>Category</h3>
             <ul>
-              <li>
-                  <a href="#">
-                      <div class="imageText">
-                          <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="rounded me-2" alt="Category">
-                          <span>Web</span>
-                      </div>
-                      <span  class="badge">8</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <div class="imageText">
-                          <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="rounded me-2" alt="Category">
-                          <span>Cloud</span>
-                      </div>
-                      <span class="badge">18</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <div class="imageText">
-                          <img src="<?= base_url('front/assets/images/blog-3.jpeg') ?>" class="rounded me-2" alt="Category">
-                          <span>Social</span>
-                      </div>
-                      <span  class="badge">98</span>
-                  </a>
-              </li>
+                <?php foreach ($categories as $category): ?>
+                <li>
+                    <a href="javascript:void(0);">
+                    <div class="imageText">
+                        <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="rounded me-2" alt="Category">
+                        <span><?= esc($category['name']) ?></span>
+                    </div>
+                    <span class="badge"><?= $category['blog_count'] ?></span>
+                    </a>
+                </li>
+                <?php endforeach; ?>
             </ul>
-          </div>
-    
+        </div>
+
           <!-- Recent Posts -->
-          <div class="widgetSection recentPostSection">
-            <h3 >Recent Posts</h2>
+        <div class="widgetSection recentPostSection">
+            <h3>Recent Posts</h3>
             <ul>
-              <li >
-                  <a href="#" class="">
-                  <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="" alt="Recent Post">
-                  Web development 
-                  </a>
-              </li>
-              <li >
-                  <a href="#" class="">
-                      <img src="<?= base_url('front/assets/images/blog-2.jpeg')?>" class="" alt="Recent Post">
-                      Social Media
-                      </a>
-              </li>
-              <li >
-                  <a href="#" class="">
-                      <img src="assets/images/blog-3.jpeg" class="" alt="Recent Post">
-                     Cloud Backup
-                      </a>
-              </li>
+                <?php foreach ($recentPosts as $post): ?>
+                    <li>
+                        <a href="<?= base_url('blog/details/' . $post['slug']) ?>">
+                            <img src="<?= base_url('uploads/blogs/' . $post['image']) ?>" alt="<?= esc($post['title']) ?>">
+                            <?= esc($post['title']) ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
-          </div>
+        </div>
+
+
     
           <!-- Popular Tags -->
-          <div class="widgetSection tagsSection">
-            <h3 >Popular Tag</h2>
+        <div class="widgetSection tagsSection">
+            <h3>Popular Tags</h3>
             <div class="tags">
-              <a href="#" class="btn">Social Media</a>
-              <a href="#" class="btn">Web Development </a>
-              <a href="#" class="btn">Cloud </a>
-              <a href="#" class="btn">Content Management</a>
-              <a href="#" class="btn">Data Entry</a>
+                <?php foreach ($popularTags as $tag): ?>
+                    <a href="javascript:void(0);" class="btn"><?= esc($tag) ?></a>
+                <?php endforeach; ?>
             </div>
-          </div>
+        </div>
+
     
         </div>
       </div>
     </div>
 
 
-    <ul class="pagination py-3">
+  <div class="d-flex justify-content-center mt-4">
+    <?= $pager->links('default', 'default_full') ?>
+</div>
 
-      <li>
-          <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=1" aria-label="First">
-              <span aria-hidden="true">First</span>
-          </a>
-      </li>
-      <li>
-          <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=1" aria-label="Previous">
-              <span aria-hidden="true">Previous</span>
-          </a>
-      </li>
-          
-      <li class="active">
-  <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=1">
-      1				</a>
-  </li>
-      <li>
-  <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=2">
-      2				</a>
-  </li>
-      <li>
-  <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=3">
-      3				</a>
-  </li>
-  <li>
-      <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=3">
-          4				</a>
-      </li>
-      <li>
-          <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=3">
-              5				</a>
-          </li>
 
-      <li>
-  <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=4" aria-label="Next">
-      <span aria-hidden="true">Next</span>
-  </a>
-  </li>
-  <li>
-  <a href="https://dev2.zylaxonline.com.au/laptops?attr%5Bdisplay-size%3A26%5D%5B0%5D=10-to-13&amp;page=4" aria-label="Last">
-      <span aria-hidden="true">Last</span>
-  </a>
-  </li>
-  </ul>
   
  </section>
 
