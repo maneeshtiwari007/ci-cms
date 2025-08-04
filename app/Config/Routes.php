@@ -27,7 +27,8 @@ $routes->post('/career/send-resume', 'Frontend::submitResume');
 $routes->post('/calculate-price', 'Frontend::submitForm');
 
 $routes->get('/blog', 'BlogController::blog');
-$routes->get('/blog/details', 'BlogController::blogDetails');
+$routes->get('/blog/details/(:segment)', 'BlogController::blogDetails/$1');
+
 
 
 
@@ -39,6 +40,11 @@ $routes->post('admin/login', 'Admin\Auth::login');
 $routes->get('admin/logout', 'Admin\Auth::logout'); 
 $routes->get('admin/add', 'Admin\Auth::addAdmin');
 $routes->post('admin/add', 'Admin\Auth::saveAdmin');
+
+$routes->get('admin/update-profile', 'Admin\Auth::updateProfile');
+$routes->post('admin/save-profile', 'Admin\Auth::saveProfile');
+
+
 
 $routes->get('admin/dashboard', 'Admin\Dashboard::index');
 
@@ -61,6 +67,9 @@ $routes->get('admin/delete-slider/(:num)', 'Admin\Dashboard::deleteSlider/$1');
 
 $routes->get('admin/it-cost-inquiries', 'Admin\Dashboard::itCostList');
 $routes->get('admin/it-cost-inquiries/list', 'Admin\Dashboard::getItCostData');
+
+$routes->get('admin/career/listing', 'Admin\Dashboard::careerListing');
+$routes->get('admin/contacts', 'Admin\Dashboard::contacts');
 
 
 // Blog Route Start

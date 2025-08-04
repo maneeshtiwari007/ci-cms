@@ -113,5 +113,81 @@ public function saveAdmin()
 }
 
 
+public function updateProfile(){
+    $adminId = session()->get('admin_id');
+    $adminModel = new AdminModel();
+    $admin      = $adminModel->find($adminId);
+
+    $adminImageModel = new \App\Models\AdminImageModel();
+    $adminImage = $adminImageModel->where('admin_id', $adminId)->first();
+
+    return view('admin/profile/edit', [
+        'admin' => $admin,
+        'adminImage' => $adminImage,
+    ]);
+}
+
+public function saveProfile()
+{
+    helper(['form']);
+    $adminId = session()->get('admin_id');
+
+    $rules = [
+        'first_name' => 'required',
+        'last_name'  => 'required',
+        'email'      => "required|valid_email|is_unique[admins.email,id,{$adminId}]",
+    ];
+
+    // Only validate password if it's filled
+    if ($this->request->getPost('password')) {
+        $rules['password'] = 'min_length[6]';
+    }
+
+    if (!$this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    }
+
+    $adminModel = new AdminModel();
+
+    $data = [
+        'first_name' => $this->request->getPost('first_name'),
+        'last_name'  => $this->request->getPost('last_name'),
+        'email'      => $this->request->getPost('email'),
+        'phone'      => $this->request->getPost('phone'),
+    ];
+
+    if ($this->request->getPost('password')) {
+        $data['password'] = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+    }
+
+    $adminModel->update($adminId, $data);
+
+    // Image upload (optional)
+    $imageFile = $this->request->getFile('image');
+    if ($imageFile && $imageFile->isValid()) {
+        $imageName = $imageFile->getRandomName();
+        $imageFile->move('uploads/admins/', $imageName);
+
+        $adminImageModel = new \App\Models\AdminImageModel();
+
+        // Check if image exists
+        $existingImage = $adminImageModel->where('admin_id', $adminId)->first();
+        if ($existingImage) {
+            // Optional: delete old image
+            @unlink('uploads/admins/' . $existingImage['image']);
+            $adminImageModel->update($existingImage['id'], ['image' => $imageName]);
+        } else {
+            $adminImageModel->save([
+                'admin_id' => $adminId,
+                'image'    => $imageName,
+            ]);
+        }
+    }
+
+    return redirect()->to('/admin/update-profile')->with('success', 'Profile updated successfully.');
+}
+
+
+
 
 }

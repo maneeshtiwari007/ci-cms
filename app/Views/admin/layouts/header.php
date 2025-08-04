@@ -92,9 +92,9 @@
                             <span class="d-none d-md-inline"><?= session('role') ?? 'Admin' ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <!-- <li><a class="dropdown-item" href="#"><i class="bi bi-person fs-5 me-2"></i>My Profile</a>
+                            <li><a class="dropdown-item" href="<?= base_url('admin/update-profile') ?>"><i class="bi bi-person fs-5 me-2"></i>My Profile</a>
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a>
+                           <!--  <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
