@@ -27,7 +27,7 @@ $routes->post('/career/send-resume', 'Frontend::submitResume');
 $routes->post('/calculate-price', 'Frontend::submitForm');
 
 $routes->get('/blog', 'BlogController::blog');
-$routes->get('/blog/details/(:segment)', 'BlogController::blogDetails/$1');
+$routes->get('(:segment)', 'BlogController::blogDetails/$1');
 
 
 

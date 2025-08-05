@@ -83,11 +83,21 @@
 
                 <!--begin::End Navbar Links-->
                 <ul class="navbar-nav ms-auto">
-
-                    <!--begin::User Menu Dropdown-->
+                    <?php   
+                       $adminId = session()->get('admin_id');
+                       $adminModel = new \App\Models\AdminModel();
+                       $admin      = $adminModel->find($adminId);
+                       $adminImageModel = new \App\Models\AdminImageModel();
+                       if(!empty($adminId)){
+                       $image = $adminImageModel->where('admin_id',$admin['id'])->first();
+                       $profile = $image['image']; 
+                       }else{
+                        $profile = '';
+                       }
+                     ?>
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img src="<?= base_url('backend/img/user2-160x160.jpg') ?>"
+                            <img src="<?= base_url('uploads/admins/' . $profile) ?>"
                                 class="user-image rounded-circle shadow" alt="User Image" />
                             <span class="d-none d-md-inline"><?= session('role') ?? 'Admin' ?></span>
                         </a>

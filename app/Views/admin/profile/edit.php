@@ -46,4 +46,20 @@
     </div>
 </div>
 
+<script src="<?= base_url('assets/js/jquery-3.7.0.min.js') ?>"></script>
+<link rel="stylesheet" href="<?= base_url('assets/toastr/toastr.min.css') ?>">
+
+<!-- Toastr JS -->
+<script src="<?= base_url('assets/toastr/toastr.min.js') ?>"></script>
+
+<script>
+<?php if (session()->getFlashdata('success')) : ?>
+toastr.success("<?= session('success') ?>");
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('error')) : ?>
+toastr.error("<?= session('error') ?>");
+<?php endif; ?>
+</script>    
+
 <?= $this->endSection() ?>
