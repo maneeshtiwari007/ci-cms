@@ -59,6 +59,13 @@
                         <p>Contact Us</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/seo') ?>" class="nav-link">
+                        <i class="nav-icon bi bi-graph-up"></i>
+                        <p>SEO Management</p>
+                    </a>
+                </li>
+
                  <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-grid"></i>
