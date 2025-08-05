@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6 mb-sm-0 mb-3">
-                <h3 class="mb-0">Content List</h3>
+                <h4 class="mb-0">Content List</h4>
             </div>
             <div class="col-sm-6 text-sm-end">
                 <a href="<?= base_url('admin/content/add') ?>" class="btn btn-primary"><i
@@ -42,9 +42,9 @@
                             <td><?= date('d M Y', strtotime($content['created_at'] ?? $content['created_on'])) ?></td>
                             <td>
                                 <a href="<?= base_url('admin/content/edit/' . $content['id']) ?>"
-                                    class="btn btn-sm btn-success"><i class="bi bi-pencil"></i></a>
-                                <button onclick="deleteContent(<?= $content['id'] ?>)"
-                                    class="btn btn-sm btn-danger"><i class="bi bi-trash3"></i></button>
+                                    class="btn btn-sm btn-success btn-icon"><i class="bi bi-pencil"></i></a>
+                                <button onclick="deleteContent(<?= $content['id'] ?>)" class="btn btn-sm btn-danger btn-icon"><i
+                                        class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
                         <?php endforeach ?>
@@ -88,7 +88,11 @@ $(document).ready(function() {
         language: {
             emptyTable: "No data available in table",
             info: "_START_ - _END_ / _TOTAL_",
-        }
+            paginate: {
+                previous: "<i class='bi bi-arrow-left'></i>",
+                next: "<i class='bi bi-arrow-right'></i>"
+            }
+        },
     });
 });
 

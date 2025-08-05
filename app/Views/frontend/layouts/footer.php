@@ -1,5 +1,5 @@
 <footer class="bg-dark py-4">
-  <p class="text-center text-white">© 2025 Prime IT Pty Ltd. All Rights Reserved</p>
+  <p class="text-center text-white mb-0">© 2025 Prime IT Pty Ltd. All Rights Reserved</p>
 </footer>
 
 <!-- JS -->

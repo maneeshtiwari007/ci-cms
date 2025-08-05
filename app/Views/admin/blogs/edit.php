@@ -2,16 +2,14 @@
 <?= $this->section('content') ?>
 
 <div class="container-fluid mt-4">
-    <div class="card shadow rounded-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Edit Blog</h5>
-            
+    <div class="card border-0 rounded-2">
+        <div class="card-header border-0 d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Edit Blog</h4>            
         </div>
         <div class="card-body">
             <form action="<?= base_url('admin/blogs/update/' . $blog['id']) ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field() ?>
                 <div class="row g-3">
-
                     <div class="col-sm-6">
                         <label>Title <span class="text-danger">*</span></label>
                         <input type="text" name="title" class="form-control" value="<?= old('title', $blog['title']) ?>">
@@ -91,11 +89,11 @@
                         <?php endif; ?>
                     </div>
                      <div class="mt-4">
-                        <button type="submit" class="btn btn-success me-2">
-                            <i class="bi bi-plus-circle"></i> Update Blog
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="bi bi-plus-lg me-2"></i>Update Blog
                         </button>
                         <a href="<?= base_url('admin/blogs') ?>" class="btn btn-secondary">
-                            <i class="bi bi-arrow-left"></i> Back
+                            Back
                         </a>
                     </div>
                 </div>

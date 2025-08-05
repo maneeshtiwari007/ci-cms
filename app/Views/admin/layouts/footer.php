@@ -1,15 +1,21 @@
 <!--begin::Footer-->
-<footer class="app-footer">
-    <!--begin::To the end-->
-    <div class="float-end d-none d-sm-inline">Developed by: <a href="#">Codeyiizen</a></div>
-    <!--end::To the end-->
-    <!--begin::Copyright-->
-    <strong>
-        Copyright &copy; <?= date('Y') ?>&nbsp;
-        <a href="#" class="text-decoration-none">Prime IT</a>.
-    </strong>
-    All rights reserved.
-    <!--end::Copyright-->
+<footer class="app-footer border-0">
+    <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+            <!--begin::Copyright-->
+            <p class="mb-0"><strong>
+                    Copyright &copy; <?= date('Y') ?>&nbsp;
+                    <a href="#" class="text-decoration-none">Prime IT</a>.
+                </strong>
+                All rights reserved.</p>
+            <!--end::Copyright-->
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+            <!--begin::To the end-->
+            <p class="mb-0">Developed by: <a target="_blank" href="https://www.codeyiizen.com/">Codeyiizen</a></p>
+            <!--end::To the end-->
+        </div>
+    </div>
 </footer>
 <!--end::Footer-->
 </div>

@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h3 class="mb-0">IT Cost Inquiries</h3>
+                <h4 class="mb-0">IT Cost Inquiries</h4>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
 
 <div class="app-content-body">
     <div class="container-fluid">
-         <div class="card border-0 rounded-2">
+        <div class="card border-0 rounded-2">
             <div class="card-body">
                 <!-- ✅ Responsive table wrapper -->
                 <div class="table-responsive">
@@ -70,6 +70,10 @@ $(document).ready(function() {
         "bLengthChange": false,
         language: {
             info: "_START_ - _END_ / _TOTAL_",
+            paginate: {
+                previous: "<i class='bi bi-arrow-left'></i>",
+                next: "<i class='bi bi-arrow-right'></i>"
+            }
         },
         scrollX: true, // ✅ enable horizontal scroll
         ajax: {
