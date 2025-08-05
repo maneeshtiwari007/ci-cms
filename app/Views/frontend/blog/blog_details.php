@@ -57,7 +57,7 @@
         <!-- Previous & Next Posts -->
         <div class="other-block">
           <?php if (!empty($prevPost)): ?>
-            <a class="otherblogCotent" href="<?= base_url('blog/details/' . $prevPost['slug']) ?>">
+            <a class="otherblogCotent" href="<?= base_url($prevPost['slug']) ?>">
               <div class="imgBlock"><img src="<?= base_url('uploads/blogs/' . $prevPost['image']) ?>" class="rounded me-3" alt=""></div>
               <div class="textBlock">
                 <small>Previous Post</small><br>
@@ -67,7 +67,7 @@
           <?php endif; ?>
 
           <?php if (!empty($nextPost)): ?>
-            <a class="otherblogCotent" href="<?= base_url('blog/details/' . $nextPost['slug']) ?>">
+            <a class="otherblogCotent" href="<?= base_url( $nextPost['slug']) ?>">
               <div class="imgBlock"><img src="<?= base_url('uploads/blogs/' . $nextPost['image']) ?>" class="rounded me-3" alt=""></div>
               <div class="textBlock">
                 <small>Next Post</small><br>
@@ -83,14 +83,14 @@
         <!-- Search -->
         <div class="searchSection">
           <h2>Search</h2>
-          <form method="get" action="<?= current_url() ?>">
+          <form method="get" action="<?= base_url('blog') ?>">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search..." value="<?= esc($searchTerm ?? '') ?>">
               <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
             </div>
           </form>
         </div>
-        <?php if (!empty($searchResults)): ?>
+        <!-- <?php if (!empty($searchResults)): ?>
           <div class="searchResultSection mt-4">
             <h5>Search Results for: <strong><?= esc($searchTerm) ?></strong></h5>
             <ul class="list-unstyled">
@@ -107,7 +107,7 @@
                 </li>
               <?php endforeach; ?>
             </ul>
-          </div>
+          </div> -->
         <?php elseif (!empty($searchTerm)): ?>
           <div class="mt-3 text-muted">No results found for <strong><?= esc($searchTerm) ?></strong>.</div>
         <?php endif; ?>
@@ -117,7 +117,7 @@
           <ul>
             <?php foreach ($categories as $category): ?>
               <li>
-                <a href="javascript:void(0);">
+                <a href="<?= base_url('blog?category=' . $category['slug']) ?>">
                   <div class="imageText">
                     <img src="<?= base_url('front/assets/images/blog-2.jpeg') ?>" class="rounded me-2" alt="Category">
                     <span><?= esc($category['name']) ?></span>
@@ -135,7 +135,7 @@
           <ul>
             <?php foreach ($recentPosts as $post): ?>
               <li>
-                <a href="<?= base_url('blog/details/' . $post['slug']) ?>">
+                <a href="<?= base_url($post['slug']) ?>">
                   <img src="<?= base_url('uploads/blogs/' . $post['image']) ?>" alt="<?= esc($post['title']) ?>">
                   <?= esc($post['title']) ?>
                 </a>

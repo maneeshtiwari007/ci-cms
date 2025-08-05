@@ -35,18 +35,18 @@
                     <?php foreach ($blogs as $blog): ?>
                         <div class="col-md-4">
                             <div class="card h-100">
-                                <a href="<?= base_url('blog/details/' . $blog['slug']) ?>">
+                                <a href="<?= base_url($blog['slug']) ?>">
                                     <img src="<?= base_url('uploads/blogs/' . $blog['image']) ?>" class="card-img-top" alt="<?= esc($blog['title']) ?>">
                                 </a>
                                 <div class="card-body">
                                     <p class="small mb-1"><?= date('d M, Y', strtotime($blog['created_at'])) ?></p>
-                                    <a href="<?= base_url('blog/details/' . $blog['slug']) ?>">
+                                    <a href="<?= base_url($blog['slug']) ?>">
                                         <h5 class="card-title"><?= esc($blog['title']) ?></h5>
                                     </a>
                                     <p class="card-text">
                                         <?= character_limiter(strip_tags($blog['description']), 100) ?>
                                     </p>
-                                    <a href="<?= base_url('blog/details/' . $blog['slug']) ?>" class="read-more d-inline-flex align-items-center">
+                                    <a href="<?= base_url($blog['slug']) ?>" class="read-more d-inline-flex align-items-center">
                                         Read More <i class="bi bi-arrow-up-right"></i>
                                     </a>
                                 </div>
@@ -85,7 +85,7 @@
             <ul>
                 <?php foreach ($categories as $category): ?>
                 <li>
-                    <a href="javascript:void(0);">
+                    <a href="<?= base_url('blog?category=' . $category['slug']) ?>">
                     <div class="imageText">
                         <img src="<?= base_url('front/assets/images/blog-1.jpeg') ?>" class="rounded me-2" alt="Category">
                         <span><?= esc($category['name']) ?></span>
@@ -103,7 +103,7 @@
             <ul>
                 <?php foreach ($recentPosts as $post): ?>
                     <li>
-                        <a href="<?= base_url('blog/details/' . $post['slug']) ?>">
+                        <a href="<?= base_url($post['slug']) ?>">
                             <img src="<?= base_url('uploads/blogs/' . $post['image']) ?>" alt="<?= esc($post['title']) ?>">
                             <?= esc($post['title']) ?>
                         </a>
