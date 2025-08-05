@@ -91,9 +91,18 @@ $routes->group('admin/blogs', function($routes) {
     $routes->post('update/(:num)', 'Admin\BlogController::update/$1');
     $routes->get('delete/(:num)', 'Admin\BlogController::delete/$1');
 });
-
-
 // blog Route End
+
+
+$routes->group('admin/seo', ['namespace' => 'App\Controllers\Admin'], function($routes) {
+    $routes->get('/', 'SeoController::index');
+    $routes->get('create', 'SeoController::create');
+    $routes->post('store', 'SeoController::store');
+    $routes->get('edit/(:num)', 'SeoController::edit/$1');
+    $routes->post('update/(:num)', 'SeoController::update/$1');
+    $routes->get('delete/(:num)', 'SeoController::delete/$1');
+});
+
   
 
 
