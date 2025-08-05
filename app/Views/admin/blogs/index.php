@@ -4,7 +4,7 @@
 <?php helper('text'); // Load word_limiter ?>
 
 <div class="container-fluid mt-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Blog List</h4>
         <a href="<?= base_url('admin/blogs/create') ?>" class="btn btn-primary">
             <i class="bi bi-plus-lg me-2"></i>Add Blog
@@ -37,15 +37,17 @@
                             <td><?= esc($blog['category_name']) ?></td>
                             <td>
                                 <?php if($blog['image']): ?>
-                                    <img src="<?= base_url('uploads/blogs/' . $blog['image']) ?>" width="60">
+                                <img src="<?= base_url('uploads/blogs/' . $blog['image']) ?>" width="60">
                                 <?php endif; ?>
                             </td>
                             <td><?= date('d M, Y', strtotime($blog['created_at'])) ?></td>
                             <td>
-                                <a href="<?= base_url('admin/blogs/edit/' . $blog['id']) ?>" class="btn btn-sm btn-primary">
+                                <a href="<?= base_url('admin/blogs/edit/' . $blog['id']) ?>"
+                                    class="btn btn-sm btn-success btn-icon">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
-                                <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete(<?= $blog['id'] ?>)">
+                                <button type="button" class="btn btn-sm btn-danger btn-icon"
+                                    onclick="confirmDelete(<?= $blog['id'] ?>)">
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </td>
@@ -71,34 +73,45 @@
 <script src="<?= base_url('assets/toastr/toastr.min.js') ?>"></script>
 
 <script>
-    $(document).ready(function () {
-        $('#blogTable').DataTable();
-
-
-        <?php if (session()->getFlashdata('success')) : ?>
-            toastr.success("<?= session('success') ?>");
-        <?php endif; ?>
-
-        <?php if (session()->getFlashdata('error')) : ?>
-            toastr.error("<?= session('error') ?>");
-        <?php endif; ?>
+$(document).ready(function() {
+    $('#blogTable').DataTable({
+        scrollCollapse: false,
+        responsive: true,
+        scrollX: true,
+        "bLengthChange": false,
+        language: {
+            info: "_START_ - _END_ / _TOTAL_",
+             paginate: {
+                previous: "<i class='bi bi-arrow-left'></i>",
+                next: "<i class='bi bi-arrow-right'></i>"
+            }
+        }
     });
 
-    function confirmDelete(id) {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#6c757d",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "<?= base_url('admin/blogs/delete/') ?>" + id;
-            }
-        });
-    }
+    <?php if (session()->getFlashdata('success')) : ?>
+    toastr.success("<?= session('success') ?>");
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')) : ?>
+    toastr.error("<?= session('error') ?>");
+    <?php endif; ?>
+});
+
+function confirmDelete(id) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "<?= base_url('admin/blogs/delete/') ?>" + id;
+        }
+    });
+}
 </script>
 
 <?= $this->endSection() ?>

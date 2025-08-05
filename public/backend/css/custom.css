@@ -38,6 +38,11 @@ table.table-style-2.dataTable>tbody>tr>td {
     color: var(--bs-secondary);
 }
 
+table.table-style-2.dataTable.display>tbody>tr>td {
+    border-top: 0;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scroll .dataTables_scrollBody,
 table.table-style-2.dataTable.no-footer {
     border-bottom: 0px;
 }
@@ -53,8 +58,28 @@ table.table-style-2.dataTable.no-footer {
     font-size: .875rem;
 }
 
-.dataTables_wrapper.no-footer .dataTables_paginate .paginate_button,
-.dataTables_wrapper.no-footer .dataTables_paginate .paginate_button:hover{
-background: transparent;
-border: 0;
+div.dataTables_wrapper div.dataTables_paginate ul.pagination{
+   column-gap:.25rem;
 }
+
+
+.dataTables_wrapper.no-footer .dataTables_paginate .paginate_button,
+.dataTables_wrapper.no-footer .dataTables_paginate .paginate_button:hover {
+    background: transparent;
+    border: 0;
+}
+
+table.table-style-2.dataTable .btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: .75rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .btn+.btn {
+    margin-left: .5rem;
+}
+

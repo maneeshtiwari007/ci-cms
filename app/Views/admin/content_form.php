@@ -3,9 +3,9 @@
 <?= $this->section('content') ?>
 <div class="app-content-header">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-sm-6">
-                <h3 class="mb-0">Add Content</h3>
+                <h4 class="mb-0">Add Content</h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -19,31 +19,27 @@
 
 <div class="app-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Content Form</h4>
+        <div class="card border-0 rounded-2">
+            <div class="card-header border-0">
+                <h4 class="card-title">Content Form</h4>
+            </div>
+            <div class="card-body">
+                <form action="<?= base_url('admin/content/store') ?>" method="post">
+                    <?= csrf_field() ?>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Page Title</label>
+                        <input type="text" name="title" id="title" class="form-control" required>
                     </div>
-                    <div class="card-body">
-                        <form action="<?= base_url('admin/content/store') ?>" method="post">
-                            <?= csrf_field() ?>
 
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Page Title</label>
-                                <input type="text" name="title" id="title" class="form-control" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Content</label>
-                                <textarea name="description" id="div_editor1" class="form-control" rows="8" required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="<?= base_url('admin/content') ?>" class="btn btn-secondary">Cancel</a>
-                        </form>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Content</label>
+                        <textarea name="description" id="div_editor1" class="form-control" rows="8" required></textarea>
                     </div>
-                </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="<?= base_url('admin/content') ?>" class="btn btn-secondary">Cancel</a>
+                </form>
             </div>
         </div>
     </div>
@@ -56,12 +52,10 @@
 
 <!-- ✅ Init Script -->
 <script>
-    var editor1;
-    document.addEventListener("DOMContentLoaded", function () {
-        editor1 = new RichTextEditor("#div_editor1");
-    });
-
-    
+var editor1;
+document.addEventListener("DOMContentLoaded", function() {
+    editor1 = new RichTextEditor("#div_editor1");
+});
 </script>
 
 <?= $this->endSection() ?>

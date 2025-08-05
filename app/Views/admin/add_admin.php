@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <h3 class="mb-0">Add New Admin</h3>
+                <h4 class="mb-0">Add New Admin</h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">

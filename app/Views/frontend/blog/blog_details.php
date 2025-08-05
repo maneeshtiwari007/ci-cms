@@ -86,7 +86,7 @@
           <form method="get" action="<?= base_url('blog') ?>">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search..." value="<?= esc($searchTerm ?? '') ?>">
-              <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+              <button class="btn btn-outline-secondary rounded-start-0 rounded-end" type="submit"><i class="bi bi-search"></i></button>
             </div>
           </form>
         </div>

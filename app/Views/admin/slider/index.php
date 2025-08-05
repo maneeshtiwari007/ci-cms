@@ -4,11 +4,11 @@
 
 <div class="app-content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6 mb-sm-0 mb-3">
-                <h3 class="mb-0">Slider List</h3>
+        <div class="row mb-2 align-items-center">
+            <div class="col-6 mb-0">
+                <h4 class="mb-0">Slider List</h4>
             </div>
-            <div class="col-sm-6 text-sm-end">
+            <div class="col-6 text-end">
                 <a href="<?= base_url('admin/add-slider') ?>" class="btn btn-primary"><i
                         class="bi bi-plus-lg me-2"></i>Add Slider</a>
             </div>
@@ -46,10 +46,10 @@
                             </td>
                             <td><?= date('d M Y', strtotime($slider['created_at'] ?? $slider['created_on'])) ?></td>
                             <td>
-                                <a href="<?= base_url('admin/edit-sl ider/' . $slider['id']) ?>"
-                                    class="btn btn-sm btn-success"><i class="bi bi-pencil"></i></a>
-                                <button onclick="deleteSlider(<?= $slider['id'] ?>)"
-                                    class="btn btn-sm btn-danger"><i class="bi bi-trash3"></i></button>
+                                <a href="<?= base_url('admin/edit-slider/' . $slider['id']) ?>"
+                                    class="btn btn-sm btn-success btn-icon"><i class="bi bi-pencil"></i></a>
+                                <button onclick="deleteSlider(<?= $slider['id'] ?>)" class="btn btn-sm btn-danger btn-icon"><i
+                                        class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
                         <?php endforeach ?>
@@ -93,6 +93,10 @@ $(document).ready(function() {
         language: {
             emptyTable: "No sliders available",
             info: "_START_ - _END_ / _TOTAL_",
+            paginate: {
+                previous: "<i class='bi bi-arrow-left'></i>",
+                next: "<i class='bi bi-arrow-right'></i>"
+            }
         }
     });
 });

@@ -3,9 +3,9 @@
 <?= $this->section('content') ?>
 <div class="app-content-header">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-sm-6">
-                <h3 class="mb-0">Edit Slider</h3>
+                <h4 class="mb-0">Edit Slider</h4>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -16,45 +16,63 @@
         </div>
     </div>
 </div>
-
 <section class="content">
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <?php if (session()->getFlashdata('success')) : ?>
-                    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+                <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
                 <?php endif; ?>
-                <div class="card shadow">
-                    <div class="card-header">
+                <div class="card border-0">
+                    <div class="card-header border-0">
                         <h5 class="mb-0">Update Slider</h5>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('admin/update-slider/' . $slider['id']) ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('admin/update-slider/' . $slider['id']) ?>" method="post"
+                            enctype="multipart/form-data">
                             <?= csrf_field() ?>
-                            <div class="form-group mb-3">
-                                <label for="image">Image</label>
-                                <input type="file" name="image" class="form-control">
-                                <?php if (!empty($slider['image'])): ?>
-                                    <div class="mt-2">
-                                        <img src="<?= base_url('uploads/sliders/' . $slider['image']) ?>" alt="Slider Image" height="80">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label" for="image">Upload Image</label>
+                                        <input type="file" name="image" class="form-control">
+                                        <?php if (!empty($slider['image'])): ?>
+                                        <div class="mt-2">
+                                            <img src="<?= base_url('uploads/sliders/' . $slider['image']) ?>"
+                                                alt="Slider Image" height="80">
+                                        </div>
+                                        <?php endif; ?>
+                                        <?php if (isset($validation) && $validation->hasError('image')): ?>
+                                        <div class="text-danger">
+                                            <?= $validation->getError('image') ?>
+                                        </div>
+                                        <?php endif; ?>
                                     </div>
-                                <?php endif; ?>
-                                 <?php if (isset($validation) && $validation->hasError('image')): ?>
-                                    <div class="text-danger">
-                                        <?= $validation->getError('image') ?>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Ordering</label>
+                                        <input type="number" name="ordering" class="form-control"
+                                            value="<?= old('ordering', $slider['ordering'] ?? '') ?>" required>
                                     </div>
-                                <?php endif; ?>
+                                </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <label>Ordering</label>
-                                <input type="number" name="ordering" class="form-control" value="<?= old('ordering', $slider['ordering'] ?? '') ?>" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label>Status</label>
-                                <select name="status" class="form-control">
-                                    <option value="1" <?= old('status', $slider['status'] ?? '') == '1' ? 'selected' : '' ?>>Active</option>
-                                    <option value="0" <?= old('status', $slider['status'] ?? '') == '0' ? 'selected' : '' ?>>Inactive</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Status</label>
+                                        <select name="status" class="form-control">
+                                            <option value="1"
+                                                <?= old('status', $slider['status'] ?? '') == '1' ? 'selected' : '' ?>>
+                                                Active
+                                            </option>
+                                            <option value="0"
+                                                <?= old('status', $slider['status'] ?? '') == '0' ? 'selected' : '' ?>>
+                                                Inactive
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                             <a href="<?= base_url('admin/slider') ?>" class="btn btn-secondary">Cancel</a>
