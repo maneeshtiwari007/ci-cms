@@ -3,11 +3,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $this->renderSection('pageTitle') ?></title>
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Coming Soon">
-    <meta name="description" content="In the meantime, Stay tuned. We are almost ready to launch.">
-    <!-- Font Link -->
+    <?php
+        $uri = current_url(true)->getPath();
+        $seoModel = new \App\Models\SeoModel();
+        $seo = $seoModel->where('page_url', $uri)->first();
+    ?>
 
+    <title><?= esc($seo['meta_title'] ?? 'Default Title') ?></title>
+    <meta name="description" content="<?= esc($seo['meta_description'] ?? '') ?>">
+    <meta name="keywords" content="<?= esc($seo['meta_keywords'] ?? '') ?>">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
