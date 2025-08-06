@@ -114,6 +114,9 @@ public function saveAdmin()
 
 
 public function updateProfile(){
+    if (!session()->get('admin_logged_in')) {
+        return redirect()->to('/admin/login');
+    }
     $adminId = session()->get('admin_id');
     $adminModel = new AdminModel();
     $admin      = $adminModel->find($adminId);

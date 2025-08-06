@@ -11,12 +11,18 @@ class SeoController extends BaseController
 {
     public function index()
     {
+        if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
      $seoModel = new SeoModel();
      $data['seoData'] = $seoModel->findAll();
      return view('admin/seo/index', $data);
     }
 
     public function create(){
+         if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         $model = new SeoModel();
         $seoPages = new SeoPages();
         $data['seoList'] = $model->findAll();              
@@ -26,6 +32,9 @@ class SeoController extends BaseController
 
     public function store()
     {
+         if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         $seoModel = new SeoModel();
 
         $validationRules = [
@@ -62,6 +71,9 @@ class SeoController extends BaseController
 
    public function edit($id)
     {
+         if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         $seoModel = new SeoModel();
         $seoData = $seoModel->find($id);
 
@@ -82,6 +94,9 @@ class SeoController extends BaseController
 
        public function update($id)
         {
+             if (!session()->get('admin_logged_in')) {
+                    return redirect()->to('/admin/login');
+            }
             $seoModel = new SeoModel();
 
             $validationRules = [
@@ -117,6 +132,9 @@ class SeoController extends BaseController
 
         public function delete($id)
         {
+             if (!session()->get('admin_logged_in')) {
+                    return redirect()->to('/admin/login');
+            }
             $seoModel = new SeoModel();
             $seoData = $seoModel->find($id);
 

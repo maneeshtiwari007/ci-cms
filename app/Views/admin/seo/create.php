@@ -19,7 +19,7 @@
                         <option value="">-- Select Page --</option>
                         <?php foreach ($pageOptions as $url => $label): ?>
                             <option value="<?= esc($url) ?>" <?= old('page_url') == $url ? 'selected' : '' ?>>
-                                <?= esc($label) ?> (<?= esc($url) ?>)
+                                <?= esc($label) ?> 
                             </option>
                         <?php endforeach; ?>
                     </select>

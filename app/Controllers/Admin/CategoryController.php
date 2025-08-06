@@ -15,8 +15,11 @@ class CategoryController extends BaseController
     {
         $this->categoryModel = new Category();
     }
-     public function index()
+    public function index()
     {
+         if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         $categoryModel = new Category();
 
         $data['categories'] = $categoryModel->orderBy('id', 'DESC')->findAll();
@@ -26,6 +29,9 @@ class CategoryController extends BaseController
 
     public function create()
     {
+        if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         return view('admin/categories/create');
     }
 
@@ -78,6 +84,9 @@ class CategoryController extends BaseController
 
     public function edit($id)
     {
+        if (!session()->get('admin_logged_in')) {
+                return redirect()->to('/admin/login');
+        }
         $categoryModel = new Category();
         $category = $categoryModel->find($id);
 

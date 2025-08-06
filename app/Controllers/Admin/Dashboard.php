@@ -200,6 +200,9 @@ public function storeSlider()
 
     public function sliderIndex()
     {
+       if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $model = new SliderModel();
         $data['sliders'] = $model->findAll();
         return view('admin/slider/index', $data);
@@ -207,6 +210,9 @@ public function storeSlider()
 
     public function editSlider($id)
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $sliderModel = new SliderModel();
         $slider = $sliderModel->find($id);
 
@@ -219,6 +225,9 @@ public function storeSlider()
 
 public function updateSlider($id)
 {
+    if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
     $validation = \Config\Services::validation();
 
     $validation->setRules([
@@ -327,11 +336,17 @@ public function updateSlider($id)
 
     public function itCostList()
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         return view('admin/costinquiry/it_cost_inquiries_list');
     }
 
 public function getItCostData()
 {
+     if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
      $db = \Config\Database::connect();
     $builder = $db->table('it_cost_inquiries');
 
@@ -341,6 +356,9 @@ public function getItCostData()
 }
 
 public function careerListing(){
+    if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+    }
     $model = new JobApplicationModel();
         $data['applications'] = $model->orderBy('created_at', 'DESC')->findAll();
 
@@ -348,6 +366,9 @@ public function careerListing(){
 }
 
 public function contacts(){
+    if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+    }
      $model = new ContactModel();
      $data['contacts'] = $model->orderBy('created_at', 'DESC')->findAll();
      return view('admin/contacts', $data);

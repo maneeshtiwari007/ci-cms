@@ -18,6 +18,9 @@ class BlogController extends BaseController
 
     public function index()
     {
+         if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $blogModel = new BlogModel();
         $data['blogs'] = $blogModel->select('blogs.*, categories.name as category_name')
             ->join('categories', 'categories.id = blogs.cat_id', 'left')
@@ -28,6 +31,9 @@ class BlogController extends BaseController
     }
     public function create()
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         helper(['form']);
 
         $data = [
@@ -40,6 +46,9 @@ class BlogController extends BaseController
 
     public function store()
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $validation = \Config\Services::validation();
         $data = $this->request->getPost();
 
@@ -103,6 +112,9 @@ class BlogController extends BaseController
 
     public function edit($id)
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $blogModel = new BlogModel();
         $categoryModel = new Category();
 
@@ -121,6 +133,9 @@ class BlogController extends BaseController
 
     public function update($id)
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $validation = \Config\Services::validation();
         $data = $this->request->getPost();
         $blogModel = new BlogModel();
@@ -188,6 +203,9 @@ class BlogController extends BaseController
 
     public function delete($id)
     {
+        if (!session()->get('admin_logged_in')) {
+            return redirect()->to('/admin/login');
+        }
         $blogModel = new BlogModel();
         $blog = $blogModel->find($id);
 
