@@ -18,7 +18,6 @@
     </div>
 </div>
 <!--end::App Content Header-->
-
 <!--begin::App Content-->
 <div class="app-content">
     <div class="container-fluid">
@@ -63,7 +62,7 @@
                         <div class="col-md-6">
                             <div class="form-group mb-3">
                                 <label>Status</label>
-                                <select name="status" class="form-control">
+                                <select name="status" class="form-control form-select">
                                     <option value="1"
                                         <?= old('status', $slider['status'] ?? '') == '1' ? 'selected' : '' ?>>
                                         Active</option>
