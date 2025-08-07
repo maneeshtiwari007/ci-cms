@@ -60,8 +60,15 @@
 
 <script>
     $(document).ready(function () {
-        $('#seoTable').DataTable();
-
+       $('#seoTable').DataTable({
+         "order": [[1, "asc"]], 
+            "columnDefs": [
+                {
+                    "orderable": false,
+                    "targets": [0,2,3,4,5] 
+                }
+            ],
+        });
         // Handle delete
         $('.deleteBtn').click(function () {
             var id = $(this).data('id');

@@ -88,7 +88,14 @@ $(document).ready(function() {
                 previous: "<i class='bi bi-arrow-left'></i>",
                 next: "<i class='bi bi-arrow-right'></i>"
             }
-        }
+        },
+        "order": [[1, "asc"]], 
+        "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [0,2,3,4,5] 
+            }
+        ],
     });
 
     $('.btn-delete').click(function() {

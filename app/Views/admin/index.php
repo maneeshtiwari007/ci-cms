@@ -93,6 +93,13 @@ $(document).ready(function() {
                 next: "<i class='bi bi-arrow-right'></i>"
             }
         },
+          "order": [[1, "asc"]], 
+        "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [0,2,3,4,5] 
+            }
+        ],
     });
 });
 

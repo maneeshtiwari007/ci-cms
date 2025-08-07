@@ -75,6 +75,13 @@ $(document).ready(function() {
                 next: "<i class='bi bi-arrow-right'></i>"
             }
         },
+        "order": [[0, "asc"]], 
+        "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [1,2,3,4,5,6,7,8,9,10,11,12] 
+            }
+        ],
         scrollX: true, // ✅ enable horizontal scroll
         ajax: {
             url: "<?= base_url('admin/it-cost-inquiries/list') ?>",
