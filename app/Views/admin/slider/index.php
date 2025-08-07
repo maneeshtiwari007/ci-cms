@@ -90,6 +90,7 @@ $(document).ready(function() {
         responsive: true,
         scrollX: true,
         "bLengthChange": false,
+        "order": [[0, "asc"]],
         language: {
             emptyTable: "No sliders available",
             info: "_START_ - _END_ / _TOTAL_",
@@ -97,7 +98,14 @@ $(document).ready(function() {
                 previous: "<i class='bi bi-arrow-left'></i>",
                 next: "<i class='bi bi-arrow-right'></i>"
             }
-        }
+        },
+       "order": [[0, "asc"]], 
+        "columnDefs": [
+            {
+                "orderable": false,
+                "targets": [1,2,3,4,5] 
+            }
+        ],
     });
 });
 
