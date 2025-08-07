@@ -1,7 +1,6 @@
 <?= $this->extend('admin/layouts/main') ?>
 
 <?= $this->section('content') ?>
-
 <div class="app-content-header">
     <div class="container-fluid">
         <div class="row mb-2 align-items-center">
@@ -15,7 +14,6 @@
         </div>
     </div>
 </div>
-
 <div class="app-content-body">
     <div class="container-fluid">
         <div class="card border-0 rounded-2">
@@ -48,14 +46,13 @@
                             <td>
                                 <a href="<?= base_url('admin/edit-slider/' . $slider['id']) ?>"
                                     class="btn btn-sm btn-success btn-icon"><i class="bi bi-pencil"></i></a>
-                                <button onclick="deleteSlider(<?= $slider['id'] ?>)" class="btn btn-sm btn-danger btn-icon"><i
-                                        class="bi bi-trash3"></i></button>
+                                <button onclick="deleteSlider(<?= $slider['id'] ?>)"
+                                    class="btn btn-sm btn-danger btn-icon"><i class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
                         <?php endforeach ?>
                         <?php endif ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
@@ -90,7 +87,9 @@ $(document).ready(function() {
         responsive: true,
         scrollX: true,
         "bLengthChange": false,
-        "order": [[0, "asc"]],
+        "order": [
+            [0, "asc"]
+        ],
         language: {
             emptyTable: "No sliders available",
             info: "_START_ - _END_ / _TOTAL_",
@@ -99,13 +98,13 @@ $(document).ready(function() {
                 next: "<i class='bi bi-arrow-right'></i>"
             }
         },
-       "order": [[0, "asc"]], 
-        "columnDefs": [
-            {
-                "orderable": false,
-                "targets": [1,2,3,4,5] 
-            }
+        "order": [
+            [0, "asc"]
         ],
+        "columnDefs": [{
+            "orderable": false,
+            "targets": [1, 2, 3, 4, 5]
+        }],
     });
 });
 
