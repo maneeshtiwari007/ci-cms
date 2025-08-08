@@ -101,6 +101,10 @@
 </head>
 
 <body>
+    <?php 
+    $uri = service('uri');
+    $firstSegment = $uri->getSegment(1); 
+    ?>
     <div class="error-page">
         <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center">
             <div class="page-content text-center mt-auto mb-0">
@@ -116,9 +120,16 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a class="btn btn-light rounded-pill py-2 px-4" href="<?= base_url('admin/dashboard') ?>"><i
-                                    class="bi bi-arrow-left me-2"></i>Back to Home</a>
-                        </div>
+                        <?php if ($firstSegment === 'admin'): ?>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="<?= base_url('admin/slider') ?>">
+                                <i class="bi bi-arrow-left me-2"></i>Back to Home
+                            </a>
+                        <?php else: ?>
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="<?= base_url('/') ?>">
+                                <i class="bi bi-arrow-left me-2"></i>Back to Home
+                            </a>
+                        <?php endif; ?>
+                    </div>
                     </div>
                 </div>
             </div>
