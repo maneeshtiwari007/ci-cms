@@ -37,7 +37,7 @@
     .error-page .h1 {
         font-size: 5rem;
         line-height: 1;
-        text-shadow: 4px 4px 0 #fff, 6px 6px 0 #343a40;
+        text-shadow: 4px 4px 0 #fff, 6px 6px 0 #001c3b;
     }
 
     .error-page h2,
@@ -116,14 +116,19 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a class="btn btn-light rounded-pill py-2 px-4" href="#"><i
+                            <a class="btn btn-light rounded-pill py-2 px-4" href="<?= base_url('admin/dashboard') ?>"><i
                                     class="bi bi-arrow-left me-2"></i>Back to Home</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="page-footer py-3 text-center mt-auto mb-0">
-                <p class="text-white mb-0">Copyright &copy; <?php echo date('Y') ?> All rights reserved.</p>
+                <p class="text-white mb-0">
+                    Copyright &copy; <?= date('Y') ?>&nbsp;
+                    <strong><a class="text-white text-decoration-none" href="<?= base_url('admin/dashboard') ?>"
+                            class="text-decoration-none">Prime IT Pvt.
+                            Ltd.</a></strong>&nbsp;All rights reserved.
+                </p>
             </div>
         </div>
     </div>

@@ -3,11 +3,12 @@
     <div class="row">
         <div class="col-md-6 text-center text-md-start">
             <!--begin::Copyright-->
-            <p class="mb-0"><strong>
-                    Copyright &copy; <?= date('Y') ?>&nbsp;
-                    <a href="#" class="text-decoration-none">Prime IT</a>.
+            <p class="mb-0">
+                Copyright &copy; <?= date('Y') ?>&nbsp;
+                <strong><a class="text-secondary" href="#" class="text-decoration-none">Prime IT Pvt. Ltd.</a>
                 </strong>
-                All rights reserved.</p>
+                All rights reserved.
+            </p>
             <!--end::Copyright-->
         </div>
         <div class="col-md-6 text-center text-md-end">
