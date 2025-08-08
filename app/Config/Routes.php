@@ -7,6 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 
+$routes->set404Override(function() {
+    echo view('errors/html/custom_404');
+});
+
 $routes->get('/', 'Frontend::index');
 $routes->get('/calculate-price', 'Frontend::calculatePrice');
 $routes->get('about/why-choose-us', 'Frontend::whyChooseUs');
