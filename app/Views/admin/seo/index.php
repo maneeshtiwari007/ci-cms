@@ -29,7 +29,7 @@
                                 <th>Meta Title</th>
                                 <th>Meta Description</th>
                                 <th>Meta Keywords</th>
-                                <th>Actions</th>
+                                <th style="min-width:70px">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +41,7 @@
                                 <td><?= esc($seo['meta_title']) ?></td>
                                 <td><?= esc($seo['meta_description']) ?></td>
                                 <td><?= esc($seo['meta_keywords']) ?></td>
-                                <td>
+                                <td style="min-width:70px">
                                     <a href="<?= site_url('admin/seo/edit/' . $seo['id']) ?>"
                                         class="btn btn-sm btn-success btn-success btn-icon"><i
                                             class="bi bi-pencil"></i></a>
