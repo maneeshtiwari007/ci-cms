@@ -19,12 +19,12 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-          <ul class="dropdown-menu">
+           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= base_url('services/web-development') ?>">Web Development</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('/calculate-price') ?>">Calculate Monthly Cost</a></li>
+            <li><a class="dropdown-item" href="<?= base_url('services/cyber-security') ?>">Cyber Security</a></li>
             <li><a class="dropdown-item" href="<?= base_url('services/complete-business') ?>">Complete Business</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/services/digital-marketing') ?>">Digital Marketing</a></li>
-            <li><a class="dropdown-item" href="<?= base_url('/services/business-it-support') ?>">Business IT Support</a></li>
+            <!--<li><a class="dropdown-item" href="<?= base_url('/services/business-it-support') ?>">Business IT Support</a></li>-->
             <li><a class="dropdown-item" href="<?= base_url('/services/cloud-storage-backup') ?>">Cloud Storage & Backup</a></li>
             <li><a class="dropdown-item" href="<?= base_url('/services/email-support-and-services') ?>">Email Support and Services</a></li>
           </ul>

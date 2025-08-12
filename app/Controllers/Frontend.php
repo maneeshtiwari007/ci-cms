@@ -6,6 +6,8 @@ use App\Models\SliderModel;
 use App\Models\ItCostInquiryModel;
 use App\Models\ContactModel;
 use App\Models\JobApplicationModel;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class Frontend extends BaseController
 {
@@ -162,10 +164,50 @@ class Frontend extends BaseController
         ];
 
         $model = new ItCostInquiryModel();
-        $model->save($data);
+        // $model->save($data);
+
+        // Prepare email data for view
+        $emailData = [
+            'name'               => $data['name'],
+            'email'              => $data['email'],
+            'phone'              => $data['phone'],
+            'cost_summary'       => $costSummary,
+            'total_monthly_cost' => $data['total_monthly_cost']
+        ];
+
+        $emailBody = view('Frontend/email_templates/it_cost_inquiry', $emailData);
+
+        // Load SMTP config from app/Config/Email.php
+        $emailConfig = config('Email');
+
+        // Send Email
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host       = $emailConfig->SMTPHost;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $emailConfig->SMTPUser;
+            $mail->Password   = $emailConfig->SMTPPass;
+            $mail->SMTPSecure = $emailConfig->SMTPCrypto;
+            $mail->Port       = $emailConfig->SMTPPort;
+
+            $mail->setFrom($emailConfig->fromEmail, $emailConfig->fromName);
+            $mail->addAddress($emailConfig->adminEmail, 'Prime IT');
+
+            $mail->isHTML(true);
+            $mail->Subject = 'New IT Cost Inquiry';
+            $mail->Body    = $emailBody;
+            $mail->AltBody = strip_tags($emailBody);
+
+            $mail->send();
+        } catch (Exception $e) {
+            log_message('error', 'Email could not be sent. Error: ' . $mail->ErrorInfo);
+        }
 
         return redirect()->to('/calculate-price')->with('success', 'Inquiry submitted successfully!');
     }
+
 
 
     public function submit()
@@ -182,50 +224,68 @@ class Frontend extends BaseController
             'g-recaptcha-response' => 'required'
         ];
 
-        $messages = [
-            'your-name' => [
-                'required'    => 'Name is required.',
-                'min_length'  => 'Name must be at least 2 characters.',
-                'max_length'  => 'Name must be less than 100 characters.',
-            ],
-            'your-email' => [
-                'required'    => 'Email is required.',
-                'valid_email' => 'Please enter a valid email address.',
-            ],
-            'contact' => [
-                'required'      => 'Contact number is required.',
-                'numeric'       => 'Contact number must be numeric.',
-                'exact_length'  => 'Contact number must be exactly 10 digits.',
-            ],
-            'your-subject' => [
-                'required'     => 'Subject is required.',
-                'max_length'   => 'Subject must be less than 255 characters.',
-            ],
-            'your-message' => [
-                'required'     => 'Message is required.',
-                'max_length'   => 'Message must be less than 1000 characters.',
-            ],
-            'g-recaptcha-response' => [
-                'required'     => 'Please verify the CAPTCHA.',
-            ],
-        ];
-
-        if (!$this->validate($rules, $messages)) {
+        if (!$this->validate($rules)) {
             return view('frontend/contact_us', [
                 'validation' => $validation
             ]);
         }
+
+        // Save to DB
         $model = new ContactModel();
-        $model->save([
+        // $model->save([
+        //     'name'       => $this->request->getPost('your-name'),
+        //     'email'      => $this->request->getPost('your-email'),
+        //     'contact_no' => $this->request->getPost('contact'),
+        //     'subject'    => $this->request->getPost('your-subject'),
+        //     'message'    => $this->request->getPost('your-message'),
+        // ]);
+
+        // Email data
+        $data = [
             'name'       => $this->request->getPost('your-name'),
             'email'      => $this->request->getPost('your-email'),
             'contact_no' => $this->request->getPost('contact'),
             'subject'    => $this->request->getPost('your-subject'),
             'message'    => $this->request->getPost('your-message'),
-        ]);
+        ];
+
+        // Load email template
+        $emailBody = view('frontend/email_templates/welcome', $data);
+
+        // Load SMTP config from app/Config/Email.php
+        $emailConfig = config('Email');
+
+        // Send Email with PHPMailer
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host       = $emailConfig->SMTPHost;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $emailConfig->SMTPUser;
+            $mail->Password   = $emailConfig->SMTPPass;
+            $mail->SMTPSecure = $emailConfig->SMTPCrypto;
+            $mail->Port       = $emailConfig->SMTPPort;
+
+            // Sender & Recipient
+            $mail->setFrom($emailConfig->fromEmail, $emailConfig->fromName);
+            $mail->addAddress($emailConfig->adminEmail, 'Prime It');
+
+            // Email content
+            $mail->isHTML(true);
+            $mail->Subject = 'New Contact Form Submission';
+            $mail->Body    = $emailBody;
+            $mail->AltBody = strip_tags($emailBody);
+
+            $mail->send();
+        } catch (Exception $e) {
+            log_message('error', 'Email could not be sent. Mailer Error: ' . $mail->ErrorInfo);
+        }
+
         session()->setFlashdata('success', 'Inquiry submitted successfully!');
-       return redirect()->to('/contact-us');
+        return redirect()->to('/contact-us');
     }
+
 
 
     public function submitResume()
@@ -280,6 +340,12 @@ class Frontend extends BaseController
        session()->setFlashdata('success', 'Your application has been submitted.');
        return redirect()->to('/prime-it/careers');
     }
+
+    public function cyberSecurity(){
+       $data['pageTitle'] = 'cyber security';
+        return view('frontend/cyber_security', $data); 
+    }
+
 
 
 

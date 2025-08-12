@@ -23,6 +23,7 @@ $routes->get('/services/business-it-support', 'Frontend::businessItSupports');
 $routes->get('/services/cloud-storage-backup', 'Frontend::cloudStroge');
 $routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndServices');
 $routes->get('/services/email-support-and-services', 'Frontend::emailSupportAndServices');
+$routes->get('/services/cyber-security', 'Frontend::cyberSecurity');
 $routes->get('/contact-us', 'Frontend::contactUs');
 
 $routes->post('/contact-submit', 'Frontend::submit');

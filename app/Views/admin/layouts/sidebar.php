@@ -28,12 +28,12 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?= base_url('admin/it-cost-inquiries') ?>" class="nav-link <?= ($current_uri == 'admin/it-cost-inquiries') ? 'active' : '' ?>">
                         <i class="bi bi-wallet2"></i>
                         <p>Cost Management</p>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a href="<?= base_url('admin/content/list') ?>" class="nav-link <?= ($current_uri == 'admin/content/list') ? 'active' : '' ?>">
@@ -49,12 +49,12 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="<?= base_url('admin/contacts') ?>" class="nav-link <?= ($current_uri == 'admin/contacts') ? 'active' : '' ?>">
                         <i class="nav-icon bi bi-question-circle-fill"></i>
                         <p>Contact Us</p>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-item">
                     <a href="<?= base_url('admin/seo') ?>" class="nav-link <?= ($current_uri == 'admin/seo') ? 'active' : '' ?>">
